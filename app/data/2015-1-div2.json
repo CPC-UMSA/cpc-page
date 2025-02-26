@@ -1,0 +1,72 @@
+{
+  "competition_id": "2015-1-div2",
+  "name": "Segunda División",
+  "year": 2015,
+  "location": "Universidad Mayor de San Andrés",
+  "judge": "BOCA_LOCAL",
+  "mode": "INDIVIDUAL",
+  "total_problems": null,
+  "slots": 6,
+  "scoreboard": [
+    {
+      "place": 1,
+      "team_name": "",
+      "problems_solved": 7,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680B"
+      ],
+      "coach": null
+    },
+    {
+      "place": 2,
+      "team_name": "",
+      "problems_solved": 6,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680C"
+      ],
+      "coach": null
+    },
+    {
+      "place": 3,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680D"
+      ],
+      "coach": null
+    },
+    {
+      "place": 4,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680E"
+      ],
+      "coach": null
+    },
+    {
+      "place": 5,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680F"
+      ],
+      "coach": null
+    },
+    {
+      "place": 6,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6810"
+      ],
+      "coach": null
+    }
+  ]
+}

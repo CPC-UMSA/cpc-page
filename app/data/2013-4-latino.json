@@ -1,0 +1,73 @@
+{
+  "competition_id": "2013-4-latino",
+  "name": "Latinoamericano",
+  "year": 2013,
+  "location": "Santa Cruz, UPSA",
+  "judge": "BOCA",
+  "total_problems": null,
+  "scoreboard": [
+    {
+      "place": 35,
+      "team_name": "Vampire Programmers",
+      "problems_solved": 2,
+      "total_time": 297,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6793",
+        "65c0a5f21d3a2f6b4b5e6794",
+        "65c0a5f21d3a2f6b4b5e6792"
+      ],
+      "coach": null
+    },
+    {
+      "place": 54,
+      "team_name": "Skipycoders",
+      "problems_solved": 1,
+      "total_time": 60,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6795",
+        "65c0a5f21d3a2f6b4b5e6796",
+        "65c0a5f21d3a2f6b4b5e6797"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6798"
+    },
+    {
+      "place": 66,
+      "team_name": "StamosTanLentos",
+      "problems_solved": 1,
+      "total_time": 88,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6799",
+        "65c0a5f21d3a2f6b4b5e6790",
+        "65c0a5f21d3a2f6b4b5e6789"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6800"
+    },
+    {
+      "place": 68,
+      "team_name": "Todo a Fuerza Bruta",
+      "problems_solved": 1,
+      "total_time": 91,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 111,
+      "team_name": "Kerberos",
+      "problems_solved": 1,
+      "total_time": 253,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6801",
+        "65c0a5f21d3a2f6b4b5e6791"
+      ],
+      "coach": null
+    },
+    {
+      "place": 123,
+      "team_name": "programersING *",
+      "problems_solved": 0,
+      "total_time": 0,
+      "participants": [],
+      "coach": null
+    }
+  ]
+}

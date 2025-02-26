@@ -1,0 +1,70 @@
+{
+  "competition_id": "2014-4-latino",
+  "name": "Latinoamericano",
+  "year": 2014,
+  "location": "ORURO - UTO",
+  "judge": "BOCA",
+  "total_problems": null,
+  "scoreboard": [
+    {
+      "place": 16,
+      "team_name": "Monkey Coders",
+      "problems_solved": 5,
+      "total_time": 671,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6799",
+        "65c0a5f21d3a2f6b4b5e6789",
+        "65c0a5f21d3a2f6b4b5e6805"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6800"
+    },
+    {
+      "place": 35,
+      "team_name": "7|_|x3|25",
+      "problems_solved": 3,
+      "total_time": 283,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6797",
+        "65c0a5f21d3a2f6b4b5e6798",
+        "65c0a5f21d3a2f6b4b5e6806"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6807"
+    },
+    {
+      "place": 73,
+      "team_name": "Bug Killers",
+      "problems_solved": 2,
+      "total_time": 252,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6802",
+        "65c0a5f21d3a2f6b4b5e6804",
+        "65c0a5f21d3a2f6b4b5e6803"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6808"
+    },
+    {
+      "place": 87,
+      "team_name": "no pues loco",
+      "problems_solved": 2,
+      "total_time": 409,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6790",
+        "65c0a5f21d3a2f6b4b5e6801",
+        "65c0a5f21d3a2f6b4b5e6809"
+      ],
+      "coach": null
+    },
+    {
+      "place": 88,
+      "team_name": "\\._./Troll Programmers\\._./",
+      "problems_solved": 1,
+      "total_time": 3,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6795",
+        "65c0a5f21d3a2f6b4b5e6796",
+        "65c0a5f21d3a2f6b4b5e680A"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6808"
+    }
+  ]
+}

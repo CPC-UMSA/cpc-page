@@ -1,0 +1,76 @@
+{
+  "competition_id": "2012-2-div1",
+  "name": "Primera División",
+  "year": 2012,
+  "location": "Universidad Mayor de San Andrés",
+  "judge": "BOCA_LOCAL",
+  "mode": "TEAMS",
+  "total_problems": 8,
+  "slots": null,
+  "scoreboard": [
+    {
+      "place": 1,
+      "team_name": "3.1416...Libras de mal pan cauca",
+      "problems_solved": 7,
+      "total_time": 783,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 2,
+      "team_name": "NiiN",
+      "problems_solved": 4,
+      "total_time": 455,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 3,
+      "team_name": "Bazinga",
+      "problems_solved": 3,
+      "total_time": 199,
+      "coach": null,
+      "participants": []
+    },
+    {
+      "place": 4,
+      "team_name": "NGA.java",
+      "problems_solved": 3,
+      "total_time": 206,
+      "coach": null,
+      "participants": []
+    },
+    {
+      "place": 5,
+      "team_name": "RHDLL",
+      "problems_solved": 3,
+      "total_time": 255,
+      "coach": null,
+      "participants": []
+    },
+    {
+      "place": 6,
+      "team_name": "Dark-C",
+      "problems_solved": 3,
+      "total_time": 309,
+      "coach": null,
+      "participants": []
+    },
+    {
+      "place": 7,
+      "team_name": "NZEC-TEAM",
+      "problems_solved": 3,
+      "total_time": 382,
+      "coach": null,
+      "participants": []
+    },
+    {
+      "place": 8,
+      "team_name": "ODC",
+      "problems_solved": 3,
+      "total_time": 534,
+      "coach": null,
+      "participants": []
+    }
+  ]
+}

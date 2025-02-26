@@ -1,0 +1,70 @@
+{
+  "competition_id": "2015-4-lation",
+  "name": "Latinoamericano",
+  "year": 2015,
+  "location": "Yacuiba",
+  "judge": "BOCA",
+  "total_problems": null,
+  "scoreboard": [
+    {
+      "place": 12,
+      "team_name": "Skipycoders",
+      "problems_solved": 5,
+      "total_time": 884,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6795",
+        "65c0a5f21d3a2f6b4b5e6796",
+        "65c0a5f21d3a2f6b4b5e6797"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6798"
+    },
+    {
+      "place": 48,
+      "team_name": "Fake Plastic Trees",
+      "problems_solved": 3,
+      "total_time": 303,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6815",
+        "65c0a5f21d3a2f6b4b5e6816",
+        "65c0a5f21d3a2f6b4b5e6817"
+      ],
+      "coach": null
+    },
+    {
+      "place": 49,
+      "team_name": "ALFa Team",
+      "problems_solved": 3,
+      "total_time": 326,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680F",
+        "65c0a5f21d3a2f6b4b5e6810",
+        "65c0a5f21d3a2f6b4b5e680E"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6798"
+    },
+    {
+      "place": 74,
+      "team_name": "No mames wey",
+      "problems_solved": 2,
+      "total_time": 61,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6802",
+        "65c0a5f21d3a2f6b4b5e6812",
+        "65c0a5f21d3a2f6b4b5e6818"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6789"
+    },
+    {
+      "place": 78,
+      "team_name": "BlackOut ¡<~^o^~>!",
+      "problems_solved": 2,
+      "total_time": 78,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e680B",
+        "65c0a5f21d3a2f6b4b5e680D",
+        "65c0a5f21d3a2f6b4b5e680C"
+      ],
+      "coach": "65c0a5f21d3a2f6b4b5e6792"
+    }
+  ]
+}

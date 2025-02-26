@@ -1,0 +1,30 @@
+@use "@juki-team/base-ui/styles/mixins" as utils;
+@import "@juki-team/base-ui/styles/base";
+@import "diff2html/bundles/css/diff2html.min.css";
+
+html,
+body {
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  
+  @include utils.md {
+    --top-horizontal-menu-height: 56px;
+  }
+  @include utils.lg {
+    --top-horizontal-menu-height: 80px;
+  }
+  
+  margin: 0;
+  
+  --left-vertical-menu-width: 48px !important;
+  
+  &.jk-custom-theme {
+    --t-color-background: #FFFFFF;
+    --menu-color: #F7F7F7;
+    --t-color-secondary: #2C6F9E;
+    
+    .jk-menu .jk-menu-items {
+      color: inherit !important;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "competition_id": "2015-2-div1",
+  "name": "Primera División",
+  "year": 2015,
+  "location": "Universidad Mayor de San Andrés",
+  "judge": "BOCA_LOCAL",
+  "mode": "INDIVIDUAL",
+  "total_problems": null,
+  "slots": null,
+  "scoreboard": [
+    {
+      "place": 1,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6811"
+      ],
+      "coach": null
+    },
+    {
+      "place": 2,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6789"
+      ],
+      "coach": null
+    },
+    {
+      "place": 3,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 4,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 5,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 6,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 7,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 8,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 9,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [],
+      "coach": null
+    },
+    {
+      "place": 10,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6812"
+      ],
+      "coach": null
+    },
+    {
+      "place": 11,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6813"
+      ],
+      "coach": null
+    },
+    {
+      "place": 12,
+      "team_name": "",
+      "problems_solved": null,
+      "total_time": null,
+      "participants": [
+        "65c0a5f21d3a2f6b4b5e6814"
+      ],
+      "coach": null
+    }
+  ]
+}

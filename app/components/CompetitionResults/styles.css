@@ -1,0 +1,86 @@
+.competition-container {
+    padding: 20px;
+    background-color: #f5f5f5;
+    /*min-height: 100vh;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.competition-card {
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.competition-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.competition-info {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.scoreboard {
+    margin-top: 20px;
+}
+
+.scoreboard-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.scoreboard-list {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.team-row {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.team-row:last-child {
+    border-bottom: none;
+}
+
+.best-team {
+    background: #fff6bf;
+    font-weight: bold;
+}
+
+.team-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.team-stats {
+    font-size: 14px;
+    color: #666;
+}
+
+.team-extra {
+    font-size: 12px;
+    color: #999;
+}
+
+.best-tag {
+    font-size: 14px;
+    font-weight: bold;
+    color: #d18b00;
+}
