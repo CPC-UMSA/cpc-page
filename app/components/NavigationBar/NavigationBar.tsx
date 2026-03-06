@@ -17,6 +17,7 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
   const isContestsPage = ('/' + pathname).includes('//icpc-results');
   const isHallFamePage = ('/' + pathname).includes('//hall-of-fame');
   const isJudgesPage = ('/' + pathname).includes('//judges');
+  const isPhotosPage = ('/' + pathname).includes('//photos');
   const backPah = isContestsPage ? ROUTES.CONTESTS.PAGE() : isHallFamePage ? jukiAppRoutes.JUDGE().problems.list() : '/';
 
   const menu: MenuType[] = [
@@ -37,6 +38,12 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
       icon: <span style={{ fontSize: 18 }}>⚙️</span>,
       selected: isJudgesPage,
       menuItemWrapper: ({ children }) => <Link to="/judges">{children}</Link>,
+    },
+    {
+      label: <T className="tt-se">photos</T>,
+      icon: <span style={{ fontSize: 18 }}>📷</span>,
+      selected: isPhotosPage,
+      menuItemWrapper: ({ children }) => <Link to="/photos">{children}</Link>,
     },
   ];
 

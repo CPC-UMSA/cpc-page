@@ -20,8 +20,7 @@ export const meta: MetaFunction = () => [
   { property: 'og:title', content: 'Club de Programación Competitiva · UMSA' },
   {
     property: 'og:description',
-    content:
-      'Comunidad de programación competitiva de la UMSA. Aprende algoritmos, resuelve problemas y representa a Bolivia en competencias internacionales.',
+    content: 'Comunidad de programación competitiva de la UMSA. Aprende algoritmos, resuelve problemas y representa a Bolivia en competencias internacionales.',
   },
   { property: 'og:image', content: '/logo_cpc.ico' },
   { name: 'twitter:card', content: 'summary' },
@@ -72,10 +71,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
   }
 
   return json({
-    ENV: {
-      NEXT_PUBLIC_JUKI_SERVICE_V2_URL: process.env.PUBLIC_JUKI_SERVICE_V2_URL || '',
-      NEXT_PUBLIC_JUKI_TOKEN_NAME: process.env.PUBLIC_JUKI_TOKEN_NAME || '',
-    },
     initialUser,
   });
 }
@@ -95,14 +90,6 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body className="jk-custom-theme">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-        window.ENV = ${JSON.stringify(data?.ENV ?? {})};
-        window.process = { env: ${JSON.stringify(data?.ENV ?? {})} };
-        `,
-          }}
-        />
         <ScrollRestoration />
         <Scripts />
         <RootLayout initialUser={data?.initialUser}>{children}</RootLayout>

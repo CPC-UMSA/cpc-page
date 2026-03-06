@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@ably/spaces": "^0.5.2",
-    "@juki-team/base-ui": "^1.4.48",
+    "@juki-team/base-ui": "^1.4.52",
     "@juki-team/commons": "^0.1.2",
     "@remix-run/node": "^2.17.2",
     "@remix-run/react": "^2.17.2",

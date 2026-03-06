@@ -43,6 +43,11 @@ export const ROUTES = {
       return '/judges';
     },
   },
+  PHOTOS: {
+    PAGE() {
+      return '/photos';
+    },
+  },
   BOARDS: {
     PAGE(tab?: string) {
       return '/' + ROUTES.PARAMS.BOARDS + (tab ? `?tab=${tab}` : '');

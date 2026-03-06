@@ -1764,10 +1764,10 @@
   resolved "https://registry.npmjs.org/@jspm/core/-/core-2.0.1.tgz"
   integrity sha512-Lg3PnLp0QXpxwLIAuuJboLeRaIhrgJjeuh797QADg3xz8wGLugQOS5DpsE8A6i6Adgzf+bacllkKZG3J0tGfDw==
 
-"@juki-team/base-ui@^1.4.48":
-  version "1.4.48"
-  resolved "https://npm.pkg.github.com/download/@juki-team/base-ui/1.4.48/5e0746de85cc06366bfdad572bc2b656bde5c9ef#5e0746de85cc06366bfdad572bc2b656bde5c9ef"
-  integrity sha512-IdpEBx/y4/C8rl3LUWcdgEYa5xT/4XWPUTatVR6jRH+4swVy6xqZRIzDqKXC90rVerX1T5v4G+6+VfOelVPDsg==
+"@juki-team/base-ui@^1.4.52":
+  version "1.4.52"
+  resolved "https://npm.pkg.github.com/download/@juki-team/base-ui/1.4.52/442eba16a4c73bd410f4288649960ec7cfda6615#442eba16a4c73bd410f4288649960ec7cfda6615"
+  integrity sha512-4MMJLakhFmUSVzbDa4JRBkm5rHVdHVoj0gWGN/t+ixk8nQkHuiAU49YAA5bGZIfbCt/VPt+TpIHWcSfAdzlGPg==
   dependencies:
     "@codemirror/autocomplete" "^6.20.0"
     "@codemirror/commands" "^6.10.2"
