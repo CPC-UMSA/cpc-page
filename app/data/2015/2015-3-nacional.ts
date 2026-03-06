@@ -61,7 +61,7 @@ const competition: Competition = {
       team_name: 'THreE BItmaskS *',
       problems_solved: 0,
       total_time: 0,
-      participants: ['Josoe Ernesto Ichuta Tuco', 'Carlos Angel Lopez Ruiz', 'Alejandro Lazaro Gutierrez'],
+      participants: ['Josue Ernesto Ichuta Tuco', 'Carlos Angel Lopez Ruiz', 'Alejandro Lazaro Gutierrez'],
       coach: 'Jose Eduardo Laruta Espejo',
     },
     {

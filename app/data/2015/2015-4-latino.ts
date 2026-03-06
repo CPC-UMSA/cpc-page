@@ -46,7 +46,7 @@ const competition: Competition = {
       problems_solved: 2,
       total_time: 78,
       participants: ['Fabio Laura Yavi', 'Carlos Adrian Fernandez Mondacca', 'Juan Jonatan Churata Apaza'],
-      coach: 'Jose Laura Ramirez',
+      coach: 'Jose Carlos Laura Ramirez',
     },
   ],
   resources: [],

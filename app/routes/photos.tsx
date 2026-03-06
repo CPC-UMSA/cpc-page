@@ -96,14 +96,19 @@ export default function Photos() {
       <div className="photos-body">
         <div className="photos-tabs">
           {TABS.map((tab, i) => (
-            <button
-              key={tab.label}
-              className={`photos-tab${activeTab === i ? ' active' : ''}`}
-              onClick={() => setActiveTab(i)}
-            >
+            <button key={tab.label} className={`photos-tab${activeTab === i ? ' active' : ''}`} onClick={() => setActiveTab(i)}>
               {tab.label}
             </button>
           ))}
+        </div>
+        <div className="photos-tabs-mobile">
+          <select className="year-select" value={activeTab} onChange={(e) => setActiveTab(Number(e.target.value))}>
+            {TABS.map((tab, i) => (
+              <option key={tab.label} value={i}>
+                {tab.label}
+              </option>
+            ))}
+          </select>
         </div>
 
         <div className="photos-grid">

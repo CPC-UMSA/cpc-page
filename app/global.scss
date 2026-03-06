@@ -7,6 +7,38 @@
   flex-wrap: wrap;
 }
 
+.year-selector-mobile {
+  display: none;
+  padding: 20px 24px 4px;
+}
+
+@media (max-width: 600px) {
+  .year-selector {
+    display: none;
+  }
+
+  .year-selector-mobile {
+    display: block;
+  }
+}
+
+.year-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 2px solid #2c6f9e;
+  color: #2c6f9e;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  background: white;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    border-color: #1a4a72;
+  }
+}
+
 .year-btn {
   padding: 6px 18px;
   border-radius: 20px;
@@ -488,6 +520,210 @@
   margin-top: auto;
 }
 
+/* ── ICPC Results: toolbar & participant view ─────── */
+.icpc-toolbar {
+  padding: 16px 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.view-btn {
+  padding: 6px 18px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e2d3d;
+  border: 2px solid #ccd6e0;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+
+  &:hover {
+    border-color: #2c6f9e;
+    color: #2c6f9e;
+  }
+
+  &.active {
+    background: #1e2d3d;
+    border-color: #1e2d3d;
+    color: white;
+  }
+}
+
+.participants-view {
+  padding: 16px 24px 48px;
+}
+
+.participants-search-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.participants-search {
+  padding: 8px 14px;
+  border: 2px solid #ccd6e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  width: 280px;
+  outline: none;
+  transition: border-color 0.15s;
+
+  &:focus {
+    border-color: #2c6f9e;
+  }
+}
+
+.participants-count {
+  font-size: 13px;
+  color: #6a8090;
+  font-weight: 600;
+}
+
+.participants-table-wrap {
+  overflow-x: auto;
+}
+
+.participants-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+
+  thead tr {
+    background: #f4f8fb;
+    text-align: left;
+  }
+
+  th {
+    padding: 10px 14px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #6a8090;
+    white-space: nowrap;
+  }
+}
+
+.participant-row {
+  cursor: pointer;
+  border-bottom: 1px solid #e8edf2;
+  transition: background 0.1s;
+
+  td {
+    padding: 10px 14px;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background: #f4f8fb;
+  }
+
+  &.open {
+    background: #eef4fa;
+  }
+}
+
+.pt-rank {
+  color: #9ab0c0;
+  font-size: 12px;
+  width: 36px;
+}
+
+.pt-name {
+  font-weight: 600;
+  color: #1e2d3d;
+}
+
+.pt-num {
+  text-align: center;
+  color: #4a6070;
+  font-variant-numeric: tabular-nums;
+}
+
+.pt-total {
+  font-weight: 700;
+  color: #1e2d3d;
+}
+
+.pt-chevron {
+  text-align: center;
+  color: #9ab0c0;
+  font-size: 10px;
+  width: 32px;
+}
+
+.participant-detail-row td {
+  padding: 0;
+  background: #f9fbfd;
+  border-bottom: 2px solid #2c6f9e22;
+}
+
+.participant-detail {
+  padding: 10px 20px 14px 52px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ap-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+.ap-year {
+  font-weight: 700;
+  color: #2c6f9e;
+  min-width: 36px;
+}
+
+.ap-competition {
+  color: #1e2d3d;
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.ap-team {
+  color: #4a6070;
+  flex: 1;
+}
+
+.ap-place {
+  color: #9ab0c0;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ap-role {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.ap-role-participant {
+  background: #e8f2fa;
+  color: #2c6f9e;
+}
+
+.ap-role-coach {
+  background: #fdf2e3;
+  color: #c07030;
+}
+
 /* ── Photos page ─────────────────────────────────── */
 .photos-page {
   overflow: auto;
@@ -523,6 +759,21 @@
   display: flex;
   gap: 8px;
   margin-bottom: 28px;
+}
+
+.photos-tabs-mobile {
+  display: none;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 600px) {
+  .photos-tabs {
+    display: none;
+  }
+
+  .photos-tabs-mobile {
+    display: block;
+  }
 }
 
 .photos-tab {

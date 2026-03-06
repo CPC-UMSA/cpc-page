@@ -38,7 +38,7 @@ const competition: Competition = {
       problems_solved: 2,
       total_time: 61,
       participants: ['Eliseo Eliezer Condori Mamani', 'Nestor Apaza Cruz', 'Fidel Aguilar'],
-      coach: null,
+      coach: 'Luis David Ajhuacho Tarquino',
     },
     {
       place: 107,
