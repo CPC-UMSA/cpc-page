@@ -44,14 +44,12 @@ const EMPTY_INITIAL_USER = {
 };
 
 export const RootLayout = ({ children, initialUser = EMPTY_INITIAL_USER }: PropsWithChildren<{ initialUser: InitUserState | undefined }>) => {
-  console.log('RootLayout');
-
   const { isLoadingRoute, push, replace, refresh } = useRouter();
   const routeParams = useParams();
   const location = useLocation();
   const pathname = location.pathname;
   const { searchParams, setSearchParams, deleteSearchParams, appendSearchParams } = useSearchParams();
-  console.log({ pathname, searchParams, location });
+
   const app = (
     <SWRConfig
       value={{

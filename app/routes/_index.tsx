@@ -10,8 +10,7 @@ export const meta: MetaFunction = () => [
   { property: 'og:title', content: 'Inicio · Club de Programación Competitiva UMSA' },
   {
     property: 'og:description',
-    content:
-      'Únete al club de programación competitiva de la UMSA. Competimos en ICPC y la Competencia Boliviana de Programación.',
+    content: 'Únete al club de programación competitiva de la UMSA. Competimos en ICPC y la Competencia Boliviana de Programación.',
   },
 ];
 
@@ -118,7 +117,7 @@ export default function Index() {
       {/* Accesos directos */}
       <section className="section">
         <div className="quicklinks-grid">
-          <a href="/app/routes/icpc-results" className="judge-box judge-box-link">
+          <a href="/icpc-results" className="judge-box judge-box-link">
             <div className="judge-box-icon">🏆</div>
             <div>
               <p className="judge-box-title">Resultados ICPC</p>

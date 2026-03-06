@@ -13,7 +13,6 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
     nickname,
     company: { key: companyKey },
   } = useUserStore((store) => store.user);
-  console.log('>>', { pathname });
   const isContestsPage = ('/' + pathname).includes('//icpc-results');
   const isHallFamePage = ('/' + pathname).includes('//hall-of-fame');
   const isJudgesPage = ('/' + pathname).includes('//judges');
