@@ -9,11 +9,15 @@ declare module '@remix-run/node' {
 }
 
 export default defineConfig({
+  ssr: {
+    noExternal: ['@juki-team/base-ui', '@ably/spaces'],
+  },
   server: {
     watch: {
       usePolling: true,
     },
-    port: process.env.VITE_PORT ? Number(process.env.VITE_PORT) : 3070,
+    port: process.env.VITE_PORT ? Number(process.env.VITE_PORT) : 3080,
+    allowedHosts: [ 'www.local.umsa.club' ],
   },
   plugins: [
     remix({

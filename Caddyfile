@@ -1,0 +1,4 @@
+www.local.umsa.club:443 {
+    tls internal
+    reverse_proxy localhost:3080
+}

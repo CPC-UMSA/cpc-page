@@ -27,10 +27,15 @@ export const ROUTES = {
     SHEET: 'sheet',
     BOARDS: 'boards',
   },
-  
+
   RANKING: {
     PAGE() {
       return '/' + ROUTES.PARAMS.RANKING;
+    },
+  },
+  CONTESTS: {
+    PAGE() {
+      return '/' + ROUTES.PARAMS.CONTESTS;
     },
   },
   BOARDS: {

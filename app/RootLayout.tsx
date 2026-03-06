@@ -1,75 +1,57 @@
+import { EMPTY_COMPANY, EMPTY_USER } from '@juki-team/base-ui/constants';
 import { Link, useLocation, useParams } from '@remix-run/react';
 import { Analytics } from '@vercel/analytics/react';
 import { createInstance, i18n } from 'i18next';
 import { Children, PropsWithChildren } from 'react';
 import { SWRConfig } from 'swr';
-import {
-  ErrorBoundary,
-  JukiProviders,
-  JukiSocketAlert,
-  NavigationBar,
-  NewVersionAvailableTrigger,
-  SubmissionModal,
-  T,
-  UserPreviewModal,
-} from '~/components';
+import { ErrorBoundary, JukiI18nInitializer, JukiProviders, NavigationBar, NewVersionAvailable, StylesLazy, T, UserStoreProvider } from '~/components';
 import { ClientOnly } from '~/components/ClientOnly';
-import { jukiApiSocketManager, jukiAppRoutes, jukiGlobalStore } from '~/config';
 import { JUKI_APP_COMPANY_KEY, NODE_ENV, ROUTES } from '~/config/constants';
-import { useEffect, useJukiUI, useJukiUser, useState } from '~/hooks';
+import { useUIStore, useUserStore } from '~/hooks';
 import { useRouter } from '~/hooks/useRouter';
 import { useSearchParams } from '~/hooks/useSearchParams';
 import initTranslations from '~/i18n/i18n';
-import { UserProvider } from '~/store';
-import { FC, Language, LastPathKey, LinkCmpProps } from '~/types';
+import { FC, InitUserState, LastPathKey, LinkCmpProps } from '~/types';
 
 const i18nInstance = createInstance() as i18n;
 
 void initTranslations(i18nInstance);
 
 const SponsoredByTag = () => {
-  
-  const { company: { key } } = useJukiUser();
-  const { components: { Link } } = useJukiUI();
-  
-  if (key === JUKI_APP_COMPANY_KEY) {
+  const companyKey = useUserStore((store) => store.company.key);
+  const {
+    components: { Link },
+  } = useUIStore();
+
+  if (companyKey === JUKI_APP_COMPANY_KEY) {
     return null;
   }
-  
+
   return (
     <div className="sponsored-by">
       <T>sponsored by</T>&nbsp;
-      <Link href="https://juki.app" target="_blank" rel="noreferrer">Juki.app</Link>
+      <Link href="https://juki.app" target="_blank" rel="noreferrer">
+        Juki.app
+      </Link>
     </div>
   );
 };
 
-export const RootLayout = ({ children }: PropsWithChildren) => {
-  
-  const [ _, setLanguage ] = useState<Language | undefined>();
-  
-  useEffect(() => {
-    jukiApiSocketManager.setApiSettings(window.ENV.JUKI_SERVICE_V1_URL, window.ENV.JUKI_SERVICE_V2_URL, window.ENV.JUKI_TOKEN_NAME);
-    jukiApiSocketManager.setSocketSettings(window.ENV.JUKI_SOCKET_BASE_URL);
-    void jukiGlobalStore.setI18n(i18nInstance);
-    
-    const handleLanguageChange = (lng: Language) => setLanguage(lng);
-    
-    i18nInstance.on('languageChanged', handleLanguageChange);
-    return () => {
-      i18nInstance.off('languageChanged', handleLanguageChange);
-    };
-    
-  }, []);
-  
+const EMPTY_INITIAL_USER = {
+  user: EMPTY_USER,
+  company: EMPTY_COMPANY,
+  isLoading: false,
+};
+
+export const RootLayout = ({ children, initialUser = EMPTY_INITIAL_USER }: PropsWithChildren<{ initialUser: InitUserState | undefined }>) => {
   console.log('RootLayout');
-  
+
   const { isLoadingRoute, push, replace, refresh } = useRouter();
   const routeParams = useParams();
   const location = useLocation();
   const pathname = location.pathname;
   const { searchParams, setSearchParams, deleteSearchParams, appendSearchParams } = useSearchParams();
-  
+  console.log({ pathname, searchParams, location });
   const app = (
     <SWRConfig
       value={{
@@ -94,6 +76,8 @@ export const RootLayout = ({ children }: PropsWithChildren) => {
       }}
     >
       <JukiProviders
+        multiCompanies={false}
+        onSeeMyProfile={() => {}}
         components={{ Link: Link as unknown as FC<LinkCmpProps> }}
         router={{
           searchParams,
@@ -108,47 +92,29 @@ export const RootLayout = ({ children }: PropsWithChildren) => {
           isLoadingRoute,
         }}
         initialLastPath={{
-          [LastPathKey.SECTION_CONTEST]: {
-            pathname: jukiAppRoutes.JUDGE().contests.list(),
-            searchParams: new URLSearchParams(),
-          },
-          [LastPathKey.CONTESTS]: {
-            pathname: jukiAppRoutes.JUDGE().contests.list(),
-            searchParams: new URLSearchParams(),
-          },
-          [LastPathKey.SECTION_PROBLEM]: {
-            pathname: jukiAppRoutes.JUDGE().problems.list(),
-            searchParams: new URLSearchParams(),
-          },
-          [LastPathKey.PROBLEMS]: {
-            pathname: jukiAppRoutes.JUDGE().problems.list(),
-            searchParams: new URLSearchParams(),
-          },
-          [LastPathKey.BOARDS]: {
-            pathname: ROUTES.BOARDS.PAGE(),
-            searchParams: new URLSearchParams(),
-          },
-          [LastPathKey.SECTION_HELP]: { pathname: `/help`, searchParams: new URLSearchParams() },
+          [LastPathKey.SECTION_CONTEST]: ROUTES.CONTESTS.PAGE(),
+          [LastPathKey.CONTESTS]: ROUTES.CONTESTS.PAGE(),
+          [LastPathKey.BOARDS]: ROUTES.BOARDS.PAGE(),
+          [LastPathKey.SECTION_HELP]: '/help',
         }}
       >
-        <UserProvider>
-          <NewVersionAvailableTrigger apiVersionUrl="/api/version" />
-          <NavigationBar>
-            <Analytics key="analytics" />
-            {Children.toArray(children)}
-            <UserPreviewModal key="user-preview-modal" />
-            <SubmissionModal key="submission-modal" />
-          </NavigationBar>
-          <JukiSocketAlert />
-          <SponsoredByTag />
-        </UserProvider>
+        <NavigationBar>
+          <Analytics key="analytics" />
+          {Children.toArray(children)}
+        </NavigationBar>
+        <NewVersionAvailable apiVersionUrl="/api/version" />
+        <SponsoredByTag />
       </JukiProviders>
     </SWRConfig>
   );
-  
+
   return (
     <ClientOnly>
-      {NODE_ENV === 'development' ? app : <ErrorBoundary reload={refresh}>{app}</ErrorBoundary>}
+      <JukiI18nInitializer />
+      <StylesLazy />
+      <UserStoreProvider initialUser={initialUser}>
+        {NODE_ENV === 'development' ? app : <ErrorBoundary reload={refresh}>{app}</ErrorBoundary>}
+      </UserStoreProvider>
     </ClientOnly>
   );
 };

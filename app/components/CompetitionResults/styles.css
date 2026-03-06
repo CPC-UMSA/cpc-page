@@ -1,86 +1,178 @@
-.competition-container {
-    padding: 20px;
-    background-color: #f5f5f5;
-    /*min-height: 100vh;*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cr-container {
+  padding: 24px 16px;
+  display: flex;
+  justify-content: center;
 }
 
-.competition-card {
-    max-width: 600px;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.cr-card {
+  width: 100%;
+  max-width: 860px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.competition-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
+/* Header */
+.cr-header {
+  background: linear-gradient(135deg, #1a4a72 0%, #2c6f9e 100%);
+  padding: 28px 32px 24px;
+  color: white;
+  text-align: center;
 }
 
-.competition-info {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 20px;
+.cr-title {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
-.scoreboard {
-    margin-top: 20px;
+.cr-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.scoreboard-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 10px;
+.cr-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  opacity: 0.9;
 }
 
-.scoreboard-list {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
+.cr-meta-icon {
+  font-size: 14px;
 }
 
-.team-row {
-    padding: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    border-bottom: 1px solid #ddd;
+.cr-meta-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.4);
 }
 
-.team-row:last-child {
-    border-bottom: none;
+/* Table */
+.cr-scoreboard {
+  background: white;
 }
 
-.best-team {
-    background: #fff6bf;
-    font-weight: bold;
+.cr-table-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 100px;
+  padding: 10px 20px;
+  background: #f0f4f8;
+  border-bottom: 2px solid #dde3ea;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #7a8a99;
 }
 
-.team-name {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
+.cr-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 100px 100px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #eef1f5;
+  align-items: center;
+  transition: background 0.15s ease;
 }
 
-.team-stats {
-    font-size: 14px;
-    color: #666;
+.cr-row:last-child {
+  border-bottom: none;
 }
 
-.team-extra {
-    font-size: 12px;
-    color: #999;
+.cr-row:hover {
+  background: #f7fafd;
 }
 
-.best-tag {
-    font-size: 14px;
-    font-weight: bold;
-    color: #d18b00;
+/* Rank highlights */
+.cr-rank-1 {
+  background: linear-gradient(90deg, #fffbea 0%, white 60%);
+}
+.cr-rank-1:hover {
+  background: linear-gradient(90deg, #fff3c4 0%, #f7fafd 60%);
+}
+
+.cr-rank-2 {
+  background: linear-gradient(90deg, #f4f4f4 0%, white 60%);
+}
+.cr-rank-2:hover {
+  background: linear-gradient(90deg, #e8e8e8 0%, #f7fafd 60%);
+}
+
+.cr-rank-3 {
+  background: linear-gradient(90deg, #fff4ee 0%, white 60%);
+}
+.cr-rank-3:hover {
+  background: linear-gradient(90deg, #ffe8d8 0%, #f7fafd 60%);
+}
+
+/* Columns */
+.cr-col-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cr-medal {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.cr-place {
+  font-size: 15px;
+  font-weight: 700;
+  color: #8a9aaa;
+}
+
+.cr-col-team {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.cr-team-name {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e2d3d;
+}
+
+.cr-team-members {
+  margin: 0;
+  font-size: 12px;
+  color: #5a7a99;
+  white-space: normal;
+  line-height: 1.5;
+}
+
+.cr-team-coach {
+  margin: 0;
+  font-size: 11px;
+  color: #9aaabb;
+  font-style: italic;
+}
+
+.cr-col-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cr-stat-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: #2c6f9e;
+}
+
+.cr-stat-label {
+  font-size: 10px;
+  color: #9aaabb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }

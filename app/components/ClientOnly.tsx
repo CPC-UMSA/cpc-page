@@ -6,7 +6,7 @@ export function ClientOnly({ children }: { children: ReactNode }) {
   useEffect(() => {
     setHydrated(true);
   }, []);
-  
+  console.log({ hydrated });
   if (hydrated) {
     return <>{children}</>;
   }
