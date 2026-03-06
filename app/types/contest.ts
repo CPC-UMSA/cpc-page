@@ -1,6 +1,6 @@
 type JudgeType = 'BOCA' | 'BOCA_LOCAL' | 'VIRTUAL_JUDGE';
 
-type CompetitionMode = 'INDIVIDUAL' | 'TEAMS';
+type CompetitionMode = 'INDIVIDUAL' | 'TEAMS' | 'INDIVIDUAL_AND_TEAMS';
 
 interface ScoreboardEntry {
   place: number;
