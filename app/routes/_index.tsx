@@ -1,3 +1,20 @@
+import { MetaFunction } from '@remix-run/node';
+
+export const meta: MetaFunction = () => [
+  { title: 'Inicio · Club de Programación Competitiva UMSA' },
+  {
+    name: 'description',
+    content:
+      'Explora el mundo de los algoritmos y la programación competitiva. Únete al club de la UMSA y participa en ICPC, la Competencia Boliviana de Programación y más.',
+  },
+  { property: 'og:title', content: 'Inicio · Club de Programación Competitiva UMSA' },
+  {
+    property: 'og:description',
+    content:
+      'Únete al club de programación competitiva de la UMSA. Competimos en ICPC y la Competencia Boliviana de Programación.',
+  },
+];
+
 export default function Index() {
   return (
     <div className="home">

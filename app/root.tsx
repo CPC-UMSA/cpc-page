@@ -1,12 +1,41 @@
 import { EMPTY_COMPANY, EMPTY_USER } from '@juki-team/base-ui/constants';
-import { json, LinksFunction, LoaderFunctionArgs } from '@remix-run/node';
+import { json, LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import './global.scss';
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, useRouteLoaderData } from '@remix-run/react';
 import { ReactNode } from 'react';
 import { RootLayout } from '~/RootLayout';
 import '@juki-team/base-ui/styles.scss';
 
+export const meta: MetaFunction = () => [
+  { title: 'Club de Programación Competitiva · UMSA' },
+  {
+    name: 'description',
+    content:
+      'Comunidad de programación competitiva de la Universidad Mayor de San Andrés (UMSA). Participamos en ICPC, la Competencia Boliviana de Programación y otras competencias nacionales e internacionales.',
+  },
+  { name: 'keywords', content: 'programación competitiva, ICPC, UMSA, algoritmos, Bolivia, HACKER, Codeforces, Kattis' },
+  { name: 'author', content: 'Club de Programación Competitiva UMSA' },
+  { property: 'og:type', content: 'website' },
+  { property: 'og:site_name', content: 'CPC UMSA' },
+  { property: 'og:title', content: 'Club de Programación Competitiva · UMSA' },
+  {
+    property: 'og:description',
+    content:
+      'Comunidad de programación competitiva de la UMSA. Aprende algoritmos, resuelve problemas y representa a Bolivia en competencias internacionales.',
+  },
+  { property: 'og:image', content: '/logo_cpc.ico' },
+  { name: 'twitter:card', content: 'summary' },
+  { name: 'twitter:title', content: 'Club de Programación Competitiva · UMSA' },
+  {
+    name: 'twitter:description',
+    content: 'Comunidad de programación competitiva de la UMSA. Participa en ICPC y competencias nacionales.',
+  },
+  { name: 'twitter:image', content: '/logo_cpc.ico' },
+];
+
 export const links: LinksFunction = () => [
+  { rel: 'icon', href: '/logo_cpc.ico', type: 'image/x-icon' },
+  { rel: 'shortcut icon', href: '/logo_cpc.ico', type: 'image/x-icon' },
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
   {
     rel: 'preconnect',
@@ -55,7 +84,7 @@ export function Layout({ children }: { children: ReactNode }) {
   const data = useRouteLoaderData<typeof loader>('root');
 
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

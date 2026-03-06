@@ -29,14 +29,24 @@ const JUDGES = [
     highlights: ['Formato exacto del ICPC', 'Problemas de regionales reales', 'Usado en la Latinoamericana ICPC', 'Juez justo y rápido'],
   },
   {
-    name: 'BOCA',
-    url: 'https://icpc.usp.br/boca/',
-    logo: 'B',
+    name: 'Juez Patito',
+    url: 'https://jv.umsa.bo/',
+    logo: 'JP',
     color: '#e63946',
-    tags: ['Bolivia', 'CBP', 'Latinoamericana'],
+    tags: ['Bolivia', 'UMSA', 'Local'],
     description:
-      'Sistema de juez usado en las competencias oficiales de Bolivia: la Competencia Boliviana de Programación (HACKER) y el Concurso Latinoamericano ICPC. Es el juez que más importa conocer para representar a la UMSA. Se corre localmente durante las competencias.',
-    highlights: ['Juez oficial de la CBP (HACKER)', 'Juez del Latinoamericano ICPC', 'Interfaz minimalista', 'Instalación local para simular competencias'],
+      'Juez online de la Universidad Mayor de San Andrés (UMSA). Es la plataforma local utilizada en competencias y entrenamientos internos del club. Ideal para familiarizarse con el entorno de juez antes de competencias oficiales.',
+    highlights: ['Juez oficial de la UMSA', 'Usado en competencias internas', 'Problemas locales y nacionales', 'Acceso directo para estudiantes UMSA'],
+  },
+  {
+    name: 'Juki Judge',
+    url: 'https://judge.juki.app/',
+    logo: 'JK',
+    color: '#f7620a',
+    tags: ['Entrenamiento', 'Hojas', 'Bolivia'],
+    description:
+      'Plataforma de juez online desarrollada para apoyar el entrenamiento en programación competitiva. Usada por el club para organizar hojas de práctica y sesiones de entrenamiento con seguimiento de progreso.',
+    highlights: ['Soporte para hojas de entrenamiento', 'Seguimiento de progreso', 'Interfaz moderna', 'Integración con el ecosistema del club'],
   },
   {
     name: 'AtCoder',

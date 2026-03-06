@@ -9,6 +9,10 @@ declare module '@remix-run/node' {
 }
 
 export default defineConfig({
+  build: {
+    target: 'esnext',
+    minify: false,
+  },
   ssr: {
     noExternal: ['@juki-team/base-ui', '@ably/spaces'],
   },
