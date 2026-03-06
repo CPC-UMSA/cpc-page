@@ -1,14 +1,9 @@
-// Remix convention: loader is required for index routes to avoid being treated as a resource route
-export async function loader() {
-  return null;
-}
-
 export default function Index() {
   return (
     <div className="home">
       {/* Hero */}
       <section className="hero">
-        <h1 className="hero-title">Explora el mundo de los algoritmos y la programación competitiva</h1>
+        <h1 className="hero-title cr-we">Explora el mundo de los algoritmos y la programación competitiva</h1>
         <p className="hero-quote">
           &ldquo;El trabajo duro vence al talento cuando el talento no trabaja duro&rdquo;
           <cite>— Tim Notke</cite>
@@ -103,17 +98,31 @@ export default function Index() {
 
       <hr className="divider" />
 
-      {/* Juez online */}
+      {/* Accesos directos */}
       <section className="section">
-        <div className="judge-box">
-          <div className="judge-box-icon">⚙️</div>
-          <div>
-            <p className="judge-box-title">¿Qué es un juez online?</p>
-            <p className="judge-box-text">
-              Un juez en línea es una plataforma donde los usuarios envían su código para resolver problemas de programación, y el sistema lo ejecuta
-              automáticamente para comprobar si la solución produce las respuestas correctas y que la solución sea eficiente.
-            </p>
-          </div>
+        <div className="quicklinks-grid">
+          <a href="/app/routes/icpc-results" className="judge-box judge-box-link">
+            <div className="judge-box-icon">🏆</div>
+            <div>
+              <p className="judge-box-title">Resultados ICPC</p>
+              <p className="judge-box-text">
+                Revisa los tableros de clasificación de las competencias pasadas en las que participó el Club: Segunda División, Primera División, Nacional y
+                Latinoamericano ICPC.
+              </p>
+              <p className="judge-box-cta">Ver competencias →</p>
+            </div>
+          </a>
+          <a href="/judges" className="judge-box judge-box-link">
+            <div className="judge-box-icon">⚙️</div>
+            <div>
+              <p className="judge-box-title">Jueces online</p>
+              <p className="judge-box-text">
+                Conoce qué es un juez online, para qué los usamos y explora las plataformas que utilizamos para entrenar y competir: Codeforces, Kattis, BOCA,
+                AtCoder y más.
+              </p>
+              <p className="judge-box-cta">Ver jueces →</p>
+            </div>
+          </a>
         </div>
       </section>
     </div>

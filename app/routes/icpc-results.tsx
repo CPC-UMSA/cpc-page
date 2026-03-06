@@ -30,7 +30,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   return { years, selectedYear, competitions };
 }
 
-export default function Contests() {
+export default function IcpcResults() {
   const { years, selectedYear, competitions } = useLoaderData<typeof loader>();
 
   return (

@@ -260,11 +260,232 @@
   margin: 0 0 8px;
 }
 
+.quicklinks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.judge-box-link {
+  text-decoration: none;
+  transition: opacity 0.15s;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.88;
+  }
+}
+
+.judge-box-cta {
+  margin: 12px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #7ab0d4;
+}
+
 .judge-box-text {
   font-size: 14px;
   line-height: 1.75;
   color: #a8c0d4;
   margin: 0;
+}
+
+/* ── Judges page ─────────────────────────────────── */
+.judges-page {
+  overflow: auto;
+  height: 100%;
+}
+
+.judges-hero {
+  background: linear-gradient(135deg, #1a4a72 0%, #2c6f9e 100%);
+  color: white;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.judges-hero-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.judges-hero-sub {
+  font-size: 15px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.judges-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.judges-section-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 20px;
+}
+
+.judges-explainer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  background: #f4f8fb;
+  border-radius: 14px;
+  padding: 28px;
+  align-items: start;
+}
+
+.judges-explainer-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.judges-explainer-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 10px;
+}
+
+.judges-explainer-text {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4a6070;
+  margin: 0;
+}
+
+.judges-why {}
+
+.judges-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.judges-why-item {
+  background: white;
+  border: 1px solid #e8edf2;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #4a6070;
+  line-height: 1.6;
+
+  strong {
+    color: #1e2d3d;
+    font-size: 14px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.judges-why-icon {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.judges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.judge-card {
+  border: 1.5px solid #e8edf2;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+
+  &:hover {
+    border-color: #2c6f9e;
+    box-shadow: 0 6px 20px rgba(44, 111, 158, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
+.judge-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.judge-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 13px;
+  flex-shrink: 0;
+  letter-spacing: -0.5px;
+}
+
+.judge-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 5px;
+}
+
+.judge-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.judge-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #eef4fa;
+  color: #2c6f9e;
+  border-radius: 4px;
+  padding: 2px 7px;
+}
+
+.judge-description {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #4a6070;
+  margin: 0;
+}
+
+.judge-highlights {
+  margin: 0;
+  padding: 0 0 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #6a8090;
+  line-height: 1.5;
+}
+
+.judge-link {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2c6f9e;
+  margin-top: auto;
 }
 
 html,

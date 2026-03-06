@@ -38,6 +38,11 @@ export const ROUTES = {
       return '/' + ROUTES.PARAMS.CONTESTS;
     },
   },
+  JUDGES: {
+    PAGE() {
+      return '/judges';
+    },
+  },
   BOARDS: {
     PAGE(tab?: string) {
       return '/' + ROUTES.PARAMS.BOARDS + (tab ? `?tab=${tab}` : '');

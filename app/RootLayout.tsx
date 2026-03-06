@@ -92,10 +92,10 @@ export const RootLayout = ({ children, initialUser = EMPTY_INITIAL_USER }: Props
           isLoadingRoute,
         }}
         initialLastPath={{
-          [LastPathKey.SECTION_CONTEST]: ROUTES.CONTESTS.PAGE(),
           [LastPathKey.CONTESTS]: ROUTES.CONTESTS.PAGE(),
           [LastPathKey.BOARDS]: ROUTES.BOARDS.PAGE(),
           [LastPathKey.SECTION_HELP]: '/help',
+          [LastPathKey.JUDGES]: '/judges',
         }}
       >
         <NavigationBar>

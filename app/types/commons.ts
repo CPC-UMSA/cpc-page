@@ -111,12 +111,10 @@ export { ProfileTab } from '@juki-team/base-ui/enums';
 export type { VirtualItem } from '@tanstack/virtual-core';
 
 export enum LastPathKey {
-  SECTION_CONTEST = 'SECTION_CONTESTS',
   CONTESTS = 'CONTESTS',
-  SECTION_PROBLEM = 'SECTION_PROBLEMS',
-  PROBLEMS = 'PROBLEMS',
   SECTION_HELP = 'SECTION_HELP',
   BOARDS = 'BOARDS',
+  JUDGES = 'JUDGES',
 }
 
 export type { PropsWithChildren, ReactNode, FC } from 'react';
