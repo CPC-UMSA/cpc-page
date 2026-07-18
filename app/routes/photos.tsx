@@ -56,7 +56,7 @@ const PHOTOS_2024 = [
   '5078025703798189319.jpg',
   '5078025703798189318.jpg',
   '5078025703798189317.jpg',
-].map((f) => `/2024-div1-div2/${f}`);
+].map((f) => `/photos/2024-div1-div2/${f}`);
 
 const TABS = [{ label: '2024', photos: PHOTOS_2024 }];
 
@@ -122,10 +122,16 @@ export default function Photos() {
 
       {lightbox && (
         <div className="photo-lightbox" onClick={() => setLightbox(null)}>
-          <button className="lightbox-nav lightbox-prev" onClick={prev}>&#8249;</button>
+          <button className="lightbox-nav lightbox-prev" onClick={prev}>
+            &#8249;
+          </button>
           <img src={lightbox} alt="" onClick={(e) => e.stopPropagation()} />
-          <button className="lightbox-nav lightbox-next" onClick={next}>&#8250;</button>
-          <button className="lightbox-close" onClick={() => setLightbox(null)}>&#x2715;</button>
+          <button className="lightbox-nav lightbox-next" onClick={next}>
+            &#8250;
+          </button>
+          <button className="lightbox-close" onClick={() => setLightbox(null)}>
+            &#x2715;
+          </button>
         </div>
       )}
     </div>

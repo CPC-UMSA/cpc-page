@@ -5,9 +5,7 @@ export {
   ProblemType,
   ProblemVerdict,
   ProfileSetting,
-  UserStatus,
   Language,
-  CompanyPlan,
   Theme,
   ScopeData,
   UserRole,
@@ -19,10 +17,7 @@ export {
   RunnerType,
   MenuViewMode,
   DataViewMode,
-  CourseStatus,
   FileType,
-  CourseType,
-  CompanyLogoType,
   Status,
   EntityAccess,
   EntityMembersRank,
@@ -32,8 +27,6 @@ export {
 export type {
   TextLanguage,
   ContestProblemBasicDataResponseDTO,
-  VirtualUserResponseDTO,
-  CompanyResponseDTO,
   JudgeDataResponseDTO,
   ScoreboardResponseDTO,
   ContestDataResponseDTO,
@@ -53,13 +46,11 @@ export type {
   EmailDataResponseDTO,
   CourseSummaryListResponseDTO,
   CreateFileDTO,
-  CompanyResourceSpecificationsResponseDTO,
-  CompanyUserPermissionsResponseDTO,
   SubmissionDataResponseDTO,
   UpsertProblemDTO,
   ProblemDataResponseDTO,
   DocumentMembersResponseDTO,
-  UserCompanyBasicInfoResponseDTO,
+  UserOrganizationBasicInfoResponseDTO,
   SubmissionSummaryListResponseDTO,
   JudgeSummaryListResponseDTO,
   EntityMembersResponseDTO,
@@ -107,8 +98,6 @@ export type {
   InitUserState,
 } from '@juki-team/base-ui/types';
 export { ProfileTab } from '@juki-team/base-ui/enums';
-
-export type { VirtualItem } from '@tanstack/virtual-core';
 
 export enum LastPathKey {
   CONTESTS = 'CONTESTS',

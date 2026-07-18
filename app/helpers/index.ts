@@ -14,7 +14,7 @@ export const roundTimestamp = (timestamp: number) => {
 };
 
 export const getSimpleProblemJudgeKey = (judge: Judge, key: string, force?: boolean) => {
-  if (judge === Judge.CUSTOMER || force) {
+  if (judge === Judge.JUKI_JUDGE || force) {
     return key;
   }
   return getProblemJudgeKey(judge, key);
