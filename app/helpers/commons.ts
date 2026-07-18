@@ -14,7 +14,7 @@ export {
   mex,
   contentResponse,
   isGlobalContest,
-} from '@juki-team/commons';
+} from '@juki-team/commons/helpers';
 
 export {
   classNames,

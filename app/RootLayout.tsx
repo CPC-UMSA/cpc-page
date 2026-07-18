@@ -1,29 +1,37 @@
-import { EMPTY_COMPANY, EMPTY_USER } from '@juki-team/base-ui/constants';
+import { EMPTY_ORGANIZATION, EMPTY_USER } from '@juki-team/base-ui/constants';
 import { Link, useLocation, useParams } from '@remix-run/react';
 import { Analytics } from '@vercel/analytics/react';
 import { createInstance, i18n } from 'i18next';
 import { Children, PropsWithChildren } from 'react';
 import { SWRConfig } from 'swr';
-import { ErrorBoundary, JukiI18nInitializer, JukiProviders, NavigationBar, NewVersionAvailable, StylesLazy, T, UserStoreProvider } from '~/components';
+import { ErrorBoundary, JukiI18nBridge, JukiProviders, NavigationBar, NewVersionAvailable, StylesLazy, T, UserStoreProvider } from '~/components';
 import { ClientOnly } from '~/components/ClientOnly';
-import { JUKI_APP_COMPANY_KEY, NODE_ENV, ROUTES } from '~/config/constants';
+import { JUKI_APP_ORGANIZATION_KEY, NODE_ENV, ROUTES } from '~/config/constants';
 import { useUIStore, useUserStore } from '~/hooks';
 import { useRouter } from '~/hooks/useRouter';
 import { useSearchParams } from '~/hooks/useSearchParams';
 import initTranslations from '~/i18n/i18n';
-import { FC, InitUserState, LastPathKey, LinkCmpProps } from '~/types';
+import i18nConfig from '~/i18n/i18nConfig';
+import { FC, InitUserState, Language, LastPathKey, LinkCmpProps } from '~/types';
 
 const i18nInstance = createInstance() as i18n;
 
 void initTranslations(i18nInstance);
 
+// the app ships no translation dicts of its own, so <T> falls back to the key —
+// same behaviour as the (empty) i18next resources in ~/i18n/i18n
+const I18N_DICTS: Record<string, Record<string, string>> = {
+  [Language.EN]: {},
+  [Language.ES]: {},
+};
+
 const SponsoredByTag = () => {
-  const companyKey = useUserStore((store) => store.company.key);
+  const organizationKey = useUserStore((store) => store.organization.key);
   const {
     components: { Link },
   } = useUIStore();
 
-  if (companyKey === JUKI_APP_COMPANY_KEY) {
+  if (organizationKey === JUKI_APP_ORGANIZATION_KEY) {
     return null;
   }
 
@@ -39,7 +47,7 @@ const SponsoredByTag = () => {
 
 const EMPTY_INITIAL_USER = {
   user: EMPTY_USER,
-  company: EMPTY_COMPANY,
+  organization: EMPTY_ORGANIZATION,
   isLoading: false,
 };
 
@@ -74,7 +82,7 @@ export const RootLayout = ({ children, initialUser = EMPTY_INITIAL_USER }: Props
       }}
     >
       <JukiProviders
-        multiCompanies={false}
+        multiOrganizations={false}
         onSeeMyProfile={() => {}}
         components={{ Link: Link as unknown as FC<LinkCmpProps> }}
         router={{
@@ -108,11 +116,12 @@ export const RootLayout = ({ children, initialUser = EMPTY_INITIAL_USER }: Props
 
   return (
     <ClientOnly>
-      <JukiI18nInitializer />
-      <StylesLazy />
-      <UserStoreProvider initialUser={initialUser}>
-        {NODE_ENV === 'development' ? app : <ErrorBoundary reload={refresh}>{app}</ErrorBoundary>}
-      </UserStoreProvider>
+      <JukiI18nBridge dicts={I18N_DICTS} fallbackLocale={i18nConfig.defaultLocale}>
+        <StylesLazy />
+        <UserStoreProvider initialUser={initialUser}>
+          {NODE_ENV === 'development' ? app : <ErrorBoundary reload={refresh}>{app}</ErrorBoundary>}
+        </UserStoreProvider>
+      </JukiI18nBridge>
     </ClientOnly>
   );
 };

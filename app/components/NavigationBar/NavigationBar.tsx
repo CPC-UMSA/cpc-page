@@ -1,4 +1,4 @@
-import { MenuViewMode } from '@juki-team/commons';
+import { MenuViewMode } from '@juki-team/commons/enums';
 import { Link } from '@remix-run/react';
 import { PropsWithChildren } from 'react';
 import { AssignmentIcon, MainMenu, T } from '~/components';
@@ -11,7 +11,7 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
   const { pathname, pushRoute } = useRouterStore();
   const {
     nickname,
-    company: { key: companyKey },
+    organization: { key: organizationKey },
   } = useUserStore((store) => store.user);
   const isContestsPage = ('/' + pathname).includes('//icpc-results');
   const isHallFamePage = ('/' + pathname).includes('//hall-of-fame');
@@ -49,7 +49,7 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
   return (
     <MainMenu
       menuViewMode={MenuViewMode.HORIZONTAL}
-      onSeeMyProfile={() => pushRoute(jukiAppRoutes.JUDGE().profiles.view({ nickname, companyKey }))}
+      onSeeMyProfile={() => pushRoute(jukiAppRoutes.JUDGE().profiles.view({ nickname, organizationKey }))}
       menu={menu}
       profileSelected={pathname.includes('/profile/')}
       onBack={

@@ -12,11 +12,11 @@ importers:
         specifier: ^0.5.2
         version: 0.5.2(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@juki-team/base-ui':
-        specifier: ^1.4.104
-        version: 1.4.104(@ably/spaces@0.5.2(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@excalidraw/excalidraw@0.18.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@types/mdx@2.0.14)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(fumadocs-core@16.11.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.2.17)(lucide-react@1.24.0(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3))(immer@11.1.15)(motion@12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)(swr@2.4.2(react@19.2.7))(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.7))(zod@4.4.3)
+        specifier: ^1.4.135
+        version: 1.4.135(@ably/spaces@0.5.2(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@excalidraw/excalidraw@0.18.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@types/mdx@2.0.14)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(fumadocs-core@16.11.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.2.17)(lucide-react@1.24.0(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3))(immer@11.1.15)(motion@12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)(swr@2.4.2(react@19.2.7))(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.7))(zod@4.4.3)
       '@juki-team/commons':
-        specifier: ^0.1.30
-        version: 0.1.30
+        specifier: ^0.2.19
+        version: 0.2.19
       '@remix-run/node':
         specifier: ^2.17.2
         version: 2.17.5(typescript@5.9.3)
@@ -930,6 +930,9 @@ packages:
   '@floating-ui/core@1.8.0':
     resolution: {integrity: sha512-0CIZ5itps/8x7BG8dEIhs53BvCUH2PCoogtakwRTut+Arm58sJooJ0AuZhLw2HJYIR5cMLNPBSS728sPho2khQ==}
 
+  '@floating-ui/dom@1.7.6':
+    resolution: {integrity: sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==}
+
   '@floating-ui/dom@1.8.0':
     resolution: {integrity: sha512-yXSrzeHZBTZadLOlfyhCkJHNeLJnHRnRInwdZ40L7ZiaAtrBwoYlsDrX3v5zB1Utk7CLfzcOVnVVWoXEky7Ceg==}
 
@@ -1033,8 +1036,8 @@ packages:
   '@jspm/core@2.1.0':
     resolution: {integrity: sha512-3sRl+pkyFY/kLmHl0cgHiFp2xEqErA8N3ECjMs7serSUBmoJ70lBa0PG5t0IM6WJgdZNyyI0R8YFfi5wM8+mzg==}
 
-  '@juki-team/base-ui@1.4.104':
-    resolution: {integrity: sha512-e63rHFGwAXDyy9ZZeadcMZpmsPgVd3DWKeChLItyQjdQFtV1J5NzK38PubSJKMvHL7ssE6nHPfuJVNy96PJ0ew==, tarball: https://npm.pkg.github.com/download/@juki-team/base-ui/1.4.104/42afded3b89a10d28b45e08cec54a4fa20c3a0db}
+  '@juki-team/base-ui@1.4.135':
+    resolution: {integrity: sha512-NpMylCcvQKKXeLbUvI5QXH0W2FsClyh4sRHyVMkdp9y+kx2WYTI6E5rvxcXNHy7QExikowVX8S9upsHYvFpXcw==}
     engines: {node: '>=24'}
     peerDependencies:
       '@ably/spaces': ^0.5.2
@@ -1045,8 +1048,8 @@ packages:
       react-dom: ^19
       swr: ^2
 
-  '@juki-team/commons@0.1.30':
-    resolution: {integrity: sha512-/y0C+4r46Ut8qMnTuMPGwwAyLm2989jgxGsOex1mE7X/0l1NXL4fa3NkCL61cDmO9/v0ioMSKrA5CvnsrVAM9g==, tarball: https://npm.pkg.github.com/download/@juki-team/commons/0.1.30/c714cc09f2f3693d0159592a7c034c701a24d731}
+  '@juki-team/commons@0.2.19':
+    resolution: {integrity: sha512-IFzWydgs/hw3y1yv9/AvtnQyYFUiG8hMNfWJqowmUNPX01qrqlKN6YEgzSWOwKyF8DM1o1Wn8T7IBKDrj5HDGQ==}
 
   '@lezer/common@1.5.2':
     resolution: {integrity: sha512-sxQE460fPZyU3sdc8lafxiPwJHBzZRy/udNFynGQky1SePYBdhkBl1kOagA9uT3pxR8K09bOrmTUqA9wb/PjSQ==}
@@ -3033,9 +3036,6 @@ packages:
   class-variance-authority@0.7.1:
     resolution: {integrity: sha512-Ka+9Trutv7G8M6WT6SeiRWz792K5qEqIGEGzXKhAE6xOWAY6pPH8U+9IY3oCMv6kqTmLsv7Xh/2w2RigkePMsg==}
 
-  classnames@2.5.1:
-    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
-
   clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -4249,14 +4249,6 @@ packages:
     resolution: {integrity: sha512-cqUW2Z3EkRx7NqSyywjkgCLK7KLCL6IFVFcONG7nVYIJ3ekZ1/N5jUsihHV6Bq37NfhgtczxJcxduELtjTwkuQ==}
     peerDependencies:
       typescript: ^5 || ^6
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-
-  i18next@26.3.6:
-    resolution: {integrity: sha512-Bu5Z2nAXgfVyM8xvW3jk9EKRIuX37PudsrBViThNFx7CR7aaYTpP01cxNB/E4c4UUzTDiAZRstEhsRfPOL/8xA==}
-    peerDependencies:
-      typescript: ^5 || ^6 || ^7
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -5761,8 +5753,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-tooltip@5.30.1:
-    resolution: {integrity: sha512-1lSPLQXuVooePxadUpmcwLgOsF1mIty7UZTJ9XnyfX4drOzStYs4JMXnazcDLguQr41W5OUZddOp9kfvArdpEQ==}
+  react-tooltip@6.0.8:
+    resolution: {integrity: sha512-VPjtBPyoFwq72QVE6GYB/LtfEg/mnFBHqL0nD0oNNmjH8EZYFyBwgnFKNCOp5zCte45k1weXjKc0wXE6NICpfg==}
     peerDependencies:
       react: '>=16.14.0'
       react-dom: '>=16.14.0'
@@ -7698,6 +7690,11 @@ snapshots:
     dependencies:
       '@floating-ui/utils': 0.2.12
 
+  '@floating-ui/dom@1.7.6':
+    dependencies:
+      '@floating-ui/core': 1.8.0
+      '@floating-ui/utils': 0.2.12
+
   '@floating-ui/dom@1.8.0':
     dependencies:
       '@floating-ui/core': 1.8.0
@@ -7797,7 +7794,7 @@ snapshots:
 
   '@jspm/core@2.1.0': {}
 
-  '@juki-team/base-ui@1.4.104(@ably/spaces@0.5.2(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@excalidraw/excalidraw@0.18.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@types/mdx@2.0.14)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(fumadocs-core@16.11.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.2.17)(lucide-react@1.24.0(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3))(immer@11.1.15)(motion@12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)(swr@2.4.2(react@19.2.7))(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.7))(zod@4.4.3)':
+  '@juki-team/base-ui@1.4.135(@ably/spaces@0.5.2(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@excalidraw/excalidraw@0.18.1(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(immer@11.1.15)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(@types/mdx@2.0.14)(@types/react-dom@19.2.3(@types/react@19.2.17))(@types/react@19.2.17)(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(fumadocs-core@16.11.5(@mdx-js/mdx@3.1.1)(@types/estree-jsx@1.0.5)(@types/hast@3.0.5)(@types/mdast@4.0.4)(@types/react@19.2.17)(lucide-react@1.24.0(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)(zod@4.4.3))(immer@11.1.15)(motion@12.42.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(prosemirror-model@1.25.11)(prosemirror-state@1.4.4)(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)(swr@2.4.2(react@19.2.7))(typescript@5.9.3)(use-sync-external-store@1.6.0(react@19.2.7))(zod@4.4.3)':
     dependencies:
       '@ably/spaces': 0.5.2(ably@2.24.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@ai-sdk/react': 3.0.231(react@19.2.7)(zod@4.4.3)
@@ -7825,7 +7822,7 @@ snapshots:
       '@floating-ui/react': 0.27.20(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@handsontable/react-wrapper': 17.1.0(handsontable@17.1.0)
       '@hookform/resolvers': 5.4.0(react-hook-form@7.81.0(react@19.2.7))
-      '@juki-team/commons': 0.1.30
+      '@juki-team/commons': 0.2.19
       '@mdx-js/mdx': 3.1.1
       '@milkdown/components': 7.21.3(@codemirror/language@6.12.4)(@codemirror/state@6.7.1)(@codemirror/view@6.43.6)(typescript@5.9.3)
       '@milkdown/core': 7.21.3
@@ -7849,8 +7846,7 @@ snapshots:
       handsontable: 17.1.0
       highlight.js: 11.11.1
       i18n-iso-countries: 7.14.0
-      i18next: 26.3.6(typescript@5.9.3)
-      katex: 0.16.47
+      katex: 0.17.0
       libphonenumber-js: 1.13.8
       mermaid: 11.16.0
       microdiff: 1.5.0
@@ -7865,7 +7861,7 @@ snapshots:
       react-image-crop: 11.1.2(react@19.2.7)
       react-markdown: 10.1.0(@types/react@19.2.17)(react@19.2.7)
       react-resize-detector: 12.3.0(react@19.2.7)
-      react-tooltip: 5.30.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+      react-tooltip: 6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       recharts: 3.9.2(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react-is@16.13.1)(react@19.2.7)(redux@5.0.1)
       rehype-katex: 7.0.1
       rehype-raw: 7.0.0
@@ -7897,7 +7893,7 @@ snapshots:
       - use-sync-external-store
       - zod
 
-  '@juki-team/commons@0.1.30': {}
+  '@juki-team/commons@0.2.19': {}
 
   '@lezer/common@1.5.2': {}
 
@@ -10310,8 +10306,6 @@ snapshots:
     dependencies:
       clsx: 2.1.1
 
-  classnames@2.5.1: {}
-
   clean-stack@2.2.0: {}
 
   cli-cursor@3.1.0:
@@ -11863,10 +11857,6 @@ snapshots:
   i18next@25.10.10(typescript@5.9.3):
     dependencies:
       '@babel/runtime': 7.29.7
-    optionalDependencies:
-      typescript: 5.9.3
-
-  i18next@26.3.6(typescript@5.9.3):
     optionalDependencies:
       typescript: 5.9.3
 
@@ -13819,10 +13809,10 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.17
 
-  react-tooltip@5.30.1(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
+  react-tooltip@6.0.8(react-dom@19.2.7(react@19.2.7))(react@19.2.7):
     dependencies:
-      '@floating-ui/dom': 1.8.0
-      classnames: 2.5.1
+      '@floating-ui/dom': 1.7.6
+      clsx: 2.1.1
       react: 19.2.7
       react-dom: 19.2.7(react@19.2.7)
 

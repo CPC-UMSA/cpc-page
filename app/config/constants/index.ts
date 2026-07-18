@@ -11,7 +11,7 @@ export {
   RUNNER_ACCEPTED_PROBLEM_TYPES,
   SUBMISSION_RUN_STATUS,
   JUDGE,
-  PALLETE,
+  PALETTE,
   USER_ROLE,
   PROBLEM_ROLE,
   CONTEST_ROLE,
@@ -22,13 +22,12 @@ export {
   MAX_DATE,
   MIN_DATE,
   RUNNER_ACCEPTED_PROGRAMMING_LANGUAGES,
-  JUKI_APP_COMPANY_KEY,
-  COMPANY_PLAN,
+  JUKI_APP_ORGANIZATION_KEY,
+  ORGANIZATION_PLAN,
   PROBLEM_TYPES,
   EMPTY_USER_PERMISSIONS,
   EMPTY_ENTITY_MEMBERS,
-  EMPTY_DOCUMENT_MEMBERS,
-} from '@juki-team/commons';
+} from '@juki-team/commons/constants';
 
 export * from './commons';
 export * from './routes';

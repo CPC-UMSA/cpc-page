@@ -1,18 +1,18 @@
 import {
-  DocumentMembersResponseDTO,
+  EntityMembersResponseDto,
   EntityState,
   Judge,
-  UpsertProblemDTO,
-  UserOrganizationBasicInfoResponseDTO,
+  UpsertProblemDto,
+  UserOrganizationBasicInfoResponseDto,
 } from './commons';
 
 export type KeyFileType = 'input' | 'output';
 
-export interface UpsertProblemUIDTO extends Omit<UpsertProblemDTO, 'members'> {
+export interface UpsertProblemUIDto extends Omit<UpsertProblemDto, 'members'> {
   judgeKey: Judge | string,
   judgeIsExternal: boolean,
-  members: DocumentMembersResponseDTO,
-  owner: UserOrganizationBasicInfoResponseDTO,
+  members: EntityMembersResponseDto,
+  owner: UserOrganizationBasicInfoResponseDto,
   state: EntityState,
 }
 

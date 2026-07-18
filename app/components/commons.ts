@@ -7,7 +7,7 @@ export {
   UserPreviewModal,
   UserStoreProvider,
   MainMenu,
-  JukiI18nInitializer,
+  JukiI18nBridge,
 } from '@juki-team/base-ui';
 
 export { AssignmentIcon, TrophyIcon } from '@juki-team/base-ui/server-components';
