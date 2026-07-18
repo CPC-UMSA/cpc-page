@@ -116,12 +116,12 @@ export const RootLayout = ({ children, initialUser = EMPTY_INITIAL_USER }: Props
 
   return (
     <ClientOnly>
-      <JukiI18nBridge dicts={I18N_DICTS} fallbackLocale={i18nConfig.defaultLocale}>
-        <StylesLazy />
-        <UserStoreProvider initialUser={initialUser}>
+      <StylesLazy />
+      <UserStoreProvider initialUser={initialUser}>
+        <JukiI18nBridge dicts={I18N_DICTS} fallbackLocale={i18nConfig.defaultLocale} refreshOnLocaleChange={false}>
           {NODE_ENV === 'development' ? app : <ErrorBoundary reload={refresh}>{app}</ErrorBoundary>}
-        </UserStoreProvider>
-      </JukiI18nBridge>
+        </JukiI18nBridge>
+      </UserStoreProvider>
     </ClientOnly>
   );
 };

@@ -930,6 +930,9 @@ body {
     --t-color-background: #FFFFFF;
     --menu-color: #F7F7F7;
     --t-color-secondary: #2C6F9E;
+    // base-ui 1.4.135 draws the selected navbar item with --navbar-at-cr and keeps the
+    // label white; its default is also white, so it needs a dark value to stay legible
+    --navbar-at-cr: #2C6F9E;
     
     .jk-menu .jk-menu-items {
       color: inherit !important;
