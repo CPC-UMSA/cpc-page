@@ -1,6 +1,8 @@
 allowBuilds:
   '@parcel/watcher': true
+  '@prisma/engines': true
   esbuild: true
+  prisma: true
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - ably@2.25.0
