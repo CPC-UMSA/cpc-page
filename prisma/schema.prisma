@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum TallaPolera {
+  S
+  M
+  L
+  XL
+  XXL
+}
+
+model Division2Registration {
+  id              String      @id @default(cuid())
+  nombreCompleto  String
+  nickname        String
+  matriculaPdfUrl String?
+  celular         String
+  correo          String
+  telegramUsuario String
+  tallaPolera     TallaPolera
+  comentario      String?
+  createdAt       DateTime    @default(now())
+}

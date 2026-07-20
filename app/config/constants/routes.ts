@@ -48,6 +48,11 @@ export const ROUTES = {
       return '/photos';
     },
   },
+  DIVISION_2: {
+    PAGE() {
+      return '/division-2';
+    },
+  },
   BOARDS: {
     PAGE(tab?: string) {
       return '/' + ROUTES.PARAMS.BOARDS + (tab ? `?tab=${tab}` : '');

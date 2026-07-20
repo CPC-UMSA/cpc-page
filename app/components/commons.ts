@@ -1,6 +1,7 @@
 export {
   ErrorBoundary,
   JukiProviders,
+  Modal,
   NewVersionAvailable,
   SubmissionModal,
   T,

@@ -910,6 +910,264 @@
   }
 }
 
+/* ── Division 2 page ─────────────────────────────── */
+.division2-page {
+  overflow: auto;
+  height: 100%;
+}
+
+.division2-hero {
+  background: linear-gradient(135deg, #1a4a72 0%, #2c6f9e 100%);
+  color: white;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.division2-hero-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.division2-hero-sub {
+  font-size: 15px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.division2-content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.division2-section-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 20px;
+}
+
+.division2-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #4a6070;
+  margin: 0 0 16px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.division2-pdf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.division2-pdf-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1.5px solid #e8edf2;
+  border-radius: 12px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+
+  &:hover {
+    border-color: #2c6f9e;
+    box-shadow: 0 6px 20px rgba(44, 111, 158, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
+.division2-pdf-icon {
+  font-size: 26px;
+  line-height: 1;
+}
+
+.division2-pdf-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e2d3d;
+}
+
+.division2-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.d2-cta-btn {
+  background: #2c6f9e;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: #1a4a72;
+  }
+}
+
+/* Division 2 inscripcion modal */
+// base-ui's own .jk-modal-content width comes from a fixed grid-column system
+// (--modal-width-sm/--modal-width-lg) that ignores this dialog's actual content,
+// so the card itself must be resized here — sizing only the inner .d2-modal div
+// left a mismatched gap on desktop and let the form overflow the card on mobile.
+.d2-modal-card {
+  width: min(480px, calc(100vw - 32px)) !important;
+  max-width: min(480px, calc(100vw - 32px)) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.d2-modal {
+  padding: 32px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 24px;
+  }
+}
+
+.d2-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.d2-form-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 4px;
+}
+
+.d2-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.d2-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #4a6070;
+}
+
+.d2-input {
+  padding: 9px 12px;
+  border: 2px solid #ccd6e0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+  background: white;
+  color: #1e2d3d;
+
+  &:focus {
+    border-color: #2c6f9e;
+  }
+
+  &.has-error {
+    border-color: #d9534f;
+  }
+}
+
+.d2-file-input {
+  padding: 7px 12px;
+}
+
+.d2-select {
+  cursor: pointer;
+}
+
+.d2-textarea {
+  resize: vertical;
+  min-height: 64px;
+  line-height: 1.5;
+}
+
+.d2-error {
+  font-size: 12px;
+  font-weight: 600;
+  color: #d9534f;
+}
+
+.d2-note {
+  font-size: 12px;
+  line-height: 1.6;
+  color: #c07030;
+  background: #fdf2e3;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 2px 0 0;
+}
+
+.d2-submit-error {
+  font-size: 13px;
+  font-weight: 600;
+  color: #d9534f;
+  background: #fdeceb;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.d2-submit-btn {
+  background: #2c6f9e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+
+  &:hover {
+    background: #1a4a72;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.d2-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.d2-success-icon {
+  font-size: 40px;
+}
+
+.d2-success-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1e2d3d;
+  font-weight: 600;
+  margin: 0;
+}
+
 html,
 body {
   font-family: "Montserrat", serif;

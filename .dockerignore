@@ -1,0 +1,16 @@
+node_modules
+build
+.cache
+
+# Secrets and local-only config. Env vars come from Dokploy at runtime.
+.env
+.env.*
+!.env.example
+
+# Uploaded matriculas live on a mounted volume in production, never in the
+# image — they are personal documents and must not be baked into a layer.
+public/uploads
+
+.git
+.idea
+.DS_Store
