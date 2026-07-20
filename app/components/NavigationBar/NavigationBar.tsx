@@ -66,7 +66,7 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
             }
           : undefined
       }
-      topImageUrl="https://images.juki.pub/assets/umsa/logo.jpg"
+      topImageUrl="/logoICPC2x1.png"
     >
       {children}
     </MainMenu>
