@@ -4,6 +4,7 @@
   "sideEffects": false,
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
     "pull": "yarn add @juki-team/commons @juki-team/base-ui",
     "build": "remix vite:build",
