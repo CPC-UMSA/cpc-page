@@ -16,6 +16,7 @@ const EMPTY_INPUT: Division2RegistrationInput = {
   correo: '',
   telegramUsuario: '',
   tallaPolera: '',
+  comentario: '',
 };
 
 export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -56,10 +57,19 @@ export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean
     setInput((prev) => ({ ...prev, [field]: value }));
   }
 
+  function handleFileChange(file: File | null) {
+    setMatriculaFile(file);
+    const fileErrors = validateDivision2Registration(input, file ? { name: file.name, size: file.size, type: file.type } : null);
+    setErrors((prev) => ({ ...prev, matriculaPdf: fileErrors.matriculaPdf }));
+  }
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    const nextErrors = validateDivision2Registration(input, matriculaFile?.name ?? null);
+    const nextErrors = validateDivision2Registration(
+      input,
+      matriculaFile ? { name: matriculaFile.name, size: matriculaFile.size, type: matriculaFile.type } : null,
+    );
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) return;
 
@@ -70,6 +80,7 @@ export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean
     formData.set('correo', input.correo.trim());
     formData.set('telegramUsuario', input.telegramUsuario.trim());
     formData.set('tallaPolera', input.tallaPolera);
+    formData.set('comentario', input.comentario.trim());
     if (matriculaFile) formData.set('matriculaPdf', matriculaFile);
 
     fetcher.submit(formData, { method: 'post', action: '/division-2/inscripcion', encType: 'multipart/form-data' });
@@ -122,7 +133,7 @@ export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean
 
             <div className="d2-field">
               <label className="d2-label" htmlFor="d2-matriculaPdf">
-                Matrícula (PDF, opcional)
+                Matrícula (PDF, máx. 10MB, opcional)
               </label>
               <input
                 id="d2-matriculaPdf"
@@ -130,12 +141,12 @@ export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean
                 className={`d2-input d2-file-input${errors.matriculaPdf ? ' has-error' : ''}`}
                 type="file"
                 accept="application/pdf,.pdf"
-                onChange={(e) => setMatriculaFile(e.target.files?.[0] ?? null)}
+                onChange={(e) => handleFileChange(e.target.files?.[0] ?? null)}
               />
               {errors.matriculaPdf && <span className="d2-error">{errors.matriculaPdf}</span>}
               <p className="d2-note">
-                Esta competencia es exclusiva para estudiantes de la UMSA. Si no adjuntas el PDF de tu matrícula, no podremos verificar tu calidad de
-                estudiante y tu inscripción no será tomada en cuenta.
+                Esta competencia es exclusiva para estudiantes de la UMSA. Si no adjuntas el PDF de tu matrícula, tu inscripción no será tomada en
+                cuenta. Si eres participante de la OBI, la OFBI o la IOI, acláralo en el campo de Comentario.
               </p>
             </div>
 
@@ -202,6 +213,20 @@ export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean
                 ))}
               </select>
               {errors.tallaPolera && <span className="d2-error">{errors.tallaPolera}</span>}
+            </div>
+
+            <div className="d2-field">
+              <label className="d2-label" htmlFor="d2-comentario">
+                Comentario (opcional)
+              </label>
+              <textarea
+                id="d2-comentario"
+                className="d2-input d2-textarea"
+                rows={3}
+                placeholder="Ej: participo de la OBI / OFBI / IOI"
+                value={input.comentario}
+                onChange={(e) => handleChange('comentario', e.target.value)}
+              />
             </div>
 
             {submitError && <div className="d2-submit-error">{submitError}</div>}

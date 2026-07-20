@@ -8,6 +8,8 @@ export type Division2RegistrationInput = {
   correo: string;
   telegramUsuario: string;
   tallaPolera: string;
+  // Optional — used e.g. by OBI/OFBI/IOI participants to note that in lieu of a matrícula.
+  comentario: string;
 };
 
 export type Division2RegistrationErrors = Partial<Record<keyof Division2RegistrationInput | 'matriculaPdf', string>>;
@@ -15,11 +17,15 @@ export type Division2RegistrationErrors = Partial<Record<keyof Division2Registra
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const CELULAR_REGEX = /^\d{8}$/;
 
+export const MAX_MATRICULA_PDF_SIZE_BYTES = 10 * 1024 * 1024;
+
+export type MatriculaFileInfo = { name: string; size: number; type?: string };
+
 // Shared between the client (inline field errors) and the resource route
 // (never trust the client) — keep this file free of server-only imports.
 export function validateDivision2Registration(
   input: Division2RegistrationInput,
-  matriculaFileName?: string | null,
+  matriculaFile?: MatriculaFileInfo | null,
 ): Division2RegistrationErrors {
   const errors: Division2RegistrationErrors = {};
 
@@ -51,8 +57,13 @@ export function validateDivision2Registration(
     errors.tallaPolera = 'Selecciona una talla de polera válida.';
   }
 
-  if (matriculaFileName && !matriculaFileName.toLowerCase().endsWith('.pdf')) {
-    errors.matriculaPdf = 'La matrícula debe ser un archivo PDF.';
+  if (matriculaFile) {
+    const looksLikePdf = matriculaFile.name.toLowerCase().endsWith('.pdf') && (!matriculaFile.type || matriculaFile.type === 'application/pdf');
+    if (!looksLikePdf) {
+      errors.matriculaPdf = 'La matrícula debe ser un archivo PDF. No se aceptan otros tipos de archivo.';
+    } else if (matriculaFile.size > MAX_MATRICULA_PDF_SIZE_BYTES) {
+      errors.matriculaPdf = 'El archivo de matrícula no debe superar los 10MB.';
+    }
   }
 
   return errors;

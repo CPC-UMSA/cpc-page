@@ -1078,6 +1078,12 @@
   cursor: pointer;
 }
 
+.d2-textarea {
+  resize: vertical;
+  min-height: 64px;
+  line-height: 1.5;
+}
+
 .d2-error {
   font-size: 12px;
   font-weight: 600;

@@ -23,5 +23,6 @@ model Division2Registration {
   correo          String
   telegramUsuario String
   tallaPolera     TallaPolera
+  comentario      String?
   createdAt       DateTime    @default(now())
 }

@@ -1,10 +1,8 @@
 import type { TallaPolera as PrismaTallaPolera } from '@prisma/client';
 import { type ActionFunctionArgs, json, unstable_createMemoryUploadHandler, unstable_parseMultipartFormData } from '@remix-run/node';
 import { getPrisma } from '~/helpers/db.server';
-import { validateDivision2Registration } from '~/helpers/division2';
+import { MAX_MATRICULA_PDF_SIZE_BYTES, validateDivision2Registration } from '~/helpers/division2';
 import { savePdfFile } from '~/helpers/storage.server';
-
-const MAX_PDF_SIZE = 5 * 1024 * 1024;
 
 export async function action({ request }: ActionFunctionArgs) {
   if (request.method !== 'POST') {
@@ -13,12 +11,12 @@ export async function action({ request }: ActionFunctionArgs) {
 
   let formData: FormData;
   try {
-    const uploadHandler = unstable_createMemoryUploadHandler({ maxPartSize: MAX_PDF_SIZE });
+    const uploadHandler = unstable_createMemoryUploadHandler({ maxPartSize: MAX_MATRICULA_PDF_SIZE_BYTES });
     formData = await unstable_parseMultipartFormData(request, uploadHandler);
   } catch (error) {
     const message =
       error instanceof Error && error.name === 'MaxPartSizeExceededError'
-        ? 'El archivo de matrícula supera el tamaño máximo permitido (5MB).'
+        ? 'El archivo de matrícula supera el tamaño máximo permitido (10MB).'
         : 'No se pudo procesar el formulario.';
     return json({ success: false, message }, { status: 400 });
   }
@@ -30,15 +28,16 @@ export async function action({ request }: ActionFunctionArgs) {
     correo: String(formData.get('correo') || ''),
     telegramUsuario: String(formData.get('telegramUsuario') || ''),
     tallaPolera: String(formData.get('tallaPolera') || ''),
+    comentario: String(formData.get('comentario') || ''),
   };
 
   const matriculaField = formData.get('matriculaPdf');
   const matriculaFile = matriculaField instanceof File && matriculaField.size > 0 && matriculaField.name ? matriculaField : null;
 
-  const errors = validateDivision2Registration(input, matriculaFile?.name ?? null);
-  if (matriculaFile && matriculaFile.type && matriculaFile.type !== 'application/pdf') {
-    errors.matriculaPdf = 'La matrícula debe ser un archivo PDF.';
-  }
+  const errors = validateDivision2Registration(
+    input,
+    matriculaFile ? { name: matriculaFile.name, size: matriculaFile.size, type: matriculaFile.type } : null,
+  );
 
   if (Object.keys(errors).length > 0) {
     return json({ success: false, message: 'Revisa los datos del formulario.', fieldErrors: errors }, { status: 400 });
@@ -56,6 +55,7 @@ export async function action({ request }: ActionFunctionArgs) {
         telegramUsuario: input.telegramUsuario.trim(),
         tallaPolera: input.tallaPolera as PrismaTallaPolera,
         matriculaPdfUrl,
+        comentario: input.comentario.trim() || null,
       },
     });
 
