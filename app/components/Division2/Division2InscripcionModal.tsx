@@ -89,7 +89,7 @@ export function Division2InscripcionModal({ isOpen, onClose }: { isOpen: boolean
   const submitError = fetcher.data && !fetcher.data.success ? fetcher.data.message : null;
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} closeIcon closeOnClickOverlay closeOnKeyEscape>
+    <Modal isOpen={isOpen} onClose={onClose} closeIcon closeOnClickOverlay closeOnKeyEscape className="d2-modal-card">
       <div className="d2-modal">
         {view === 'success' ? (
           <div className="d2-success">

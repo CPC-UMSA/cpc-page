@@ -1020,9 +1020,25 @@
 }
 
 /* Division 2 inscripcion modal */
+// base-ui's own .jk-modal-content width comes from a fixed grid-column system
+// (--modal-width-sm/--modal-width-lg) that ignores this dialog's actual content,
+// so the card itself must be resized here — sizing only the inner .d2-modal div
+// left a mismatched gap on desktop and let the form overflow the card on mobile.
+.d2-modal-card {
+  width: min(480px, calc(100vw - 32px)) !important;
+  max-width: min(480px, calc(100vw - 32px)) !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
 .d2-modal {
   padding: 32px;
-  width: min(480px, 84vw);
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 24px;
+  }
 }
 
 .d2-form {
