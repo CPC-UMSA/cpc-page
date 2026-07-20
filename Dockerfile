@@ -10,7 +10,12 @@ RUN pnpm install --frozen-lockfile
 
 # Build. `prisma generate` writes the client into node_modules/.prisma, so the
 # runtime stage must take node_modules from here, not from `deps`.
+#
+# The bundles @juki-team/base-ui pulls in (mermaid, cytoscape, excalidraw, katex)
+# blow past V8's default ~2GB heap on a small build server. 3072 leaves headroom
+# for the OS on a 4GB host; raise it if the builder gets more memory.
 FROM base AS build
+ENV NODE_OPTIONS=--max-old-space-size=3072
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN pnpm db:generate && pnpm build
