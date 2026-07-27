@@ -82,7 +82,7 @@ export default function Division2() {
             <div className="info-card">
               <div className="info-card-icon">🕐</div>
               <h3 className="info-card-title">Hora</h3>
-              <p className="info-card-text">09:00 - 14:00</p>
+              <p className="info-card-text">08:00 - 14:00</p>
             </div>
           </div>
         </section>
