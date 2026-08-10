@@ -48,9 +48,9 @@ export const ROUTES = {
       return '/photos';
     },
   },
-  DIVISION_2: {
+  DIVISION_1: {
     PAGE() {
-      return '/division-2';
+      return '/division-1';
     },
   },
   BOARDS: {
