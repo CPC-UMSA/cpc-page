@@ -1140,6 +1140,244 @@
   margin: 0;
 }
 
+/* ── Admin · inscripciones ───────────────────────── */
+.admin-page {
+  overflow: auto;
+  height: 100%;
+  background: #f7f9fb;
+}
+
+.admin-gate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.admin-gate-card {
+  width: min(380px, 100%);
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.admin-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.admin-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 4px;
+}
+
+.admin-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: #4a6070;
+  margin: 0;
+}
+
+.admin-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-export-btn {
+  background: #2c6f9e;
+  color: white;
+  border: 2px solid #2c6f9e;
+  border-radius: 20px;
+  padding: 7px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+
+  &:hover {
+    background: #1a4a72;
+    border-color: #1a4a72;
+  }
+}
+
+.admin-logout-btn {
+  background: white;
+  color: #2c6f9e;
+  border: 2px solid #2c6f9e;
+  border-radius: 20px;
+  padding: 7px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: #2c6f9e;
+    color: white;
+  }
+}
+
+.admin-empty-state {
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a6070;
+  margin: 0;
+}
+
+// The table has more columns than a phone can fit, so it scrolls inside its card
+// instead of stretching the page.
+.admin-table-wrap {
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+
+  th,
+  td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid #eef2f6;
+    vertical-align: top;
+  }
+
+  th {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #4a6070;
+    background: #f2f6fa;
+    white-space: nowrap;
+  }
+
+  td {
+    color: #1e2d3d;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  tbody tr:hover td {
+    background: #f7fafd;
+  }
+}
+
+.admin-cell-index {
+  font-weight: 700;
+  color: #4a6070;
+}
+
+.admin-cell-nowrap {
+  white-space: nowrap;
+}
+
+.admin-comment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+// Comments run to several paragraphs sometimes, so the cell shows a single
+// clipped line and the full text lives in the modal behind the "Ver" button.
+.admin-comment-preview {
+  display: block;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-comment-btn {
+  flex-shrink: 0;
+  background: none;
+  border: 1.5px solid #ccd6e0;
+  border-radius: 14px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: inherit;
+  color: #2c6f9e;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+
+  &:hover {
+    border-color: #2c6f9e;
+    background: #e8f2fa;
+  }
+}
+
+.admin-modal-author {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a6070;
+  margin: 0 0 12px;
+}
+
+.admin-modal-comment {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #1e2d3d;
+  margin: 0;
+  white-space: pre-wrap;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.admin-link {
+  color: #2c6f9e;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.admin-pdf-link {
+  display: inline-block;
+  white-space: nowrap;
+  color: #2c6f9e;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.admin-dash {
+  color: #9fb0bf;
+}
+
 html,
 body {
   font-family: "Montserrat", serif;
