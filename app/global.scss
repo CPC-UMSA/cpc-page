@@ -910,32 +910,32 @@
   }
 }
 
-/* ── Division 2 page ─────────────────────────────── */
-.division2-page {
+/* ── Division 1 page ─────────────────────────────── */
+.division1-page {
   overflow: auto;
   height: 100%;
 }
 
-.division2-hero {
+.division1-hero {
   background: linear-gradient(135deg, #1a4a72 0%, #2c6f9e 100%);
   color: white;
   padding: 48px 24px;
   text-align: center;
 }
 
-.division2-hero-title {
+.division1-hero-title {
   font-size: clamp(24px, 4vw, 36px);
   font-weight: 800;
   margin: 0 0 8px;
 }
 
-.division2-hero-sub {
+.division1-hero-sub {
   font-size: 15px;
   opacity: 0.85;
   margin: 0;
 }
 
-.division2-content {
+.division1-content {
   max-width: 960px;
   margin: 0 auto;
   padding: 40px 24px 64px;
@@ -944,14 +944,14 @@
   gap: 40px;
 }
 
-.division2-section-title {
+.division1-section-title {
   font-size: 18px;
   font-weight: 800;
   color: #1e2d3d;
   margin: 0 0 20px;
 }
 
-.division2-text {
+.division1-text {
   font-size: 15px;
   line-height: 1.8;
   color: #4a6070;
@@ -962,47 +962,12 @@
   }
 }
 
-.division2-pdf-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
-}
-
-.division2-pdf-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  border: 1.5px solid #e8edf2;
-  border-radius: 12px;
-  padding: 16px 18px;
-  text-decoration: none;
-  color: inherit;
-  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
-
-  &:hover {
-    border-color: #2c6f9e;
-    box-shadow: 0 6px 20px rgba(44, 111, 158, 0.12);
-    transform: translateY(-2px);
-  }
-}
-
-.division2-pdf-icon {
-  font-size: 26px;
-  line-height: 1;
-}
-
-.division2-pdf-label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1e2d3d;
-}
-
-.division2-cta {
+.division1-cta {
   display: flex;
   justify-content: center;
 }
 
-.d2-cta-btn {
+.d1-cta-btn {
   background: #2c6f9e;
   color: white;
   border: none;
@@ -1019,19 +984,19 @@
   }
 }
 
-/* Division 2 inscripcion modal */
+/* Division 1 inscripcion modal */
 // base-ui's own .jk-modal-content width comes from a fixed grid-column system
 // (--modal-width-sm/--modal-width-lg) that ignores this dialog's actual content,
-// so the card itself must be resized here — sizing only the inner .d2-modal div
+// so the card itself must be resized here — sizing only the inner .d1-modal div
 // left a mismatched gap on desktop and let the form overflow the card on mobile.
-.d2-modal-card {
+.d1-modal-card {
   width: min(480px, calc(100vw - 32px)) !important;
   max-width: min(480px, calc(100vw - 32px)) !important;
   min-width: 0 !important;
   box-sizing: border-box !important;
 }
 
-.d2-modal {
+.d1-modal {
   padding: 32px;
   width: 100%;
   box-sizing: border-box;
@@ -1041,32 +1006,43 @@
   }
 }
 
-.d2-form {
+.d1-form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.d2-form-title {
+.d1-form-title {
   font-size: 17px;
   font-weight: 800;
   color: #1e2d3d;
   margin: 0 0 4px;
 }
 
-.d2-field {
+.d1-group-title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #2c6f9e;
+  border-top: 1px solid #e8edf2;
+  margin: 8px 0 -4px;
+  padding-top: 16px;
+}
+
+.d1-field {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.d2-label {
+.d1-label {
   font-size: 13px;
   font-weight: 700;
   color: #4a6070;
 }
 
-.d2-input {
+.d1-input {
   padding: 9px 12px;
   border: 2px solid #ccd6e0;
   border-radius: 8px;
@@ -1086,27 +1062,23 @@
   }
 }
 
-.d2-file-input {
+.d1-file-input {
   padding: 7px 12px;
 }
 
-.d2-select {
-  cursor: pointer;
-}
-
-.d2-textarea {
+.d1-textarea {
   resize: vertical;
   min-height: 64px;
   line-height: 1.5;
 }
 
-.d2-error {
+.d1-error {
   font-size: 12px;
   font-weight: 600;
   color: #d9534f;
 }
 
-.d2-note {
+.d1-note {
   font-size: 12px;
   line-height: 1.6;
   color: #c07030;
@@ -1116,7 +1088,7 @@
   margin: 2px 0 0;
 }
 
-.d2-submit-error {
+.d1-submit-error {
   font-size: 13px;
   font-weight: 600;
   color: #d9534f;
@@ -1125,7 +1097,7 @@
   padding: 10px 14px;
 }
 
-.d2-submit-btn {
+.d1-submit-btn {
   background: #2c6f9e;
   color: white;
   border: none;
@@ -1147,7 +1119,7 @@
   }
 }
 
-.d2-success {
+.d1-success {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1156,11 +1128,11 @@
   padding: 16px 0;
 }
 
-.d2-success-icon {
+.d1-success-icon {
   font-size: 40px;
 }
 
-.d2-success-text {
+.d1-success-text {
   font-size: 15px;
   line-height: 1.7;
   color: #1e2d3d;

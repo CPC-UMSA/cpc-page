@@ -5,8 +5,8 @@ import path from 'path';
 // Local-disk storage for uploaded files. Swap this implementation for a real
 // object storage client (S3, R2, etc.) if the deploy target's filesystem isn't
 // persistent — callers only depend on `savePdfFile`'s return shape.
-const UPLOADS_DIR = process.env.DIVISION_2_UPLOADS_DIR || path.join(process.cwd(), 'public', 'uploads', 'division-2');
-const UPLOADS_PUBLIC_PATH = process.env.DIVISION_2_UPLOADS_PUBLIC_PATH || '/uploads/division-2';
+const UPLOADS_DIR = process.env.DIVISION_1_UPLOADS_DIR || path.join(process.cwd(), 'public', 'uploads', 'division-1');
+const UPLOADS_PUBLIC_PATH = process.env.DIVISION_1_UPLOADS_PUBLIC_PATH || '/uploads/division-1';
 
 export async function savePdfFile(file: File, subdir: string): Promise<string> {
   const dir = path.join(UPLOADS_DIR, subdir);

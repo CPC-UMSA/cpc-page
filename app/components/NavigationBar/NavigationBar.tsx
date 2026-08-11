@@ -17,7 +17,7 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
   const isHallFamePage = ('/' + pathname).includes('//hall-of-fame');
   const isJudgesPage = ('/' + pathname).includes('//judges');
   const isPhotosPage = ('/' + pathname).includes('//photos');
-  const isDivision2Page = ('/' + pathname).includes('//division-2');
+  const isDivision1Page = ('/' + pathname).includes('//division-1');
   const backPah = isContestsPage ? ROUTES.CONTESTS.PAGE() : isHallFamePage ? jukiAppRoutes.JUDGE().problems.list() : '/';
 
   const menu: MenuType[] = [
@@ -46,10 +46,10 @@ export const NavigationBar = ({ children }: PropsWithChildren) => {
       menuItemWrapper: ({ children }) => <Link to="/photos">{children}</Link>,
     },
     {
-      label: <T className="tt-se">Division 2</T>,
+      label: <T className="tt-se">Division 1</T>,
       icon: <span style={{ fontSize: 18 }}>🏁</span>,
-      selected: isDivision2Page,
-      menuItemWrapper: ({ children }) => <Link to="/division-2">{children}</Link>,
+      selected: isDivision1Page,
+      menuItemWrapper: ({ children }) => <Link to="/division-1">{children}</Link>,
     },
   ];
 
