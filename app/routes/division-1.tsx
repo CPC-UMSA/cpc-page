@@ -1,6 +1,5 @@
 import { type MetaFunction } from '@remix-run/node';
-import { useState } from 'react';
-import { Division1InscripcionModal, PhotoGallery } from '~/components';
+import { PhotoGallery } from '~/components';
 
 export const meta: MetaFunction = () => [{ title: 'Division 1' }];
 
@@ -12,8 +11,6 @@ export async function loader() {
 const DIVISION_1_PHOTOS = Array.from({ length: 11 }, (_, i) => `/division-2/photos/div2-${String(i + 1).padStart(2, '0')}.jpeg`);
 
 export default function Division1() {
-  const [showInscripcion, setShowInscripcion] = useState(false);
-
   return (
     <div className="division1-page">
       <div className="division1-hero">
@@ -34,6 +31,10 @@ export default function Division1() {
             habilidades.
           </p>
           <p className="division1-text">
+            La edición 2027 se realizará aproximadamente a fines de julio o en agosto, marcando una nueva etapa de preparación, competencia y
+            crecimiento para los equipos de la universidad.
+          </p>
+          <p className="division1-text">
             <strong>Modalidad:</strong> se compite en equipos de 3 integrantes (obligatorio), quienes deberán resolver un conjunto de problemas
             algorítmicos dentro de un tiempo determinado. La clasificación sigue las reglas estándar de la programación competitiva: se prioriza el
             número de problemas resueltos y, en caso de empate, el tiempo total de resolución.
@@ -51,34 +52,19 @@ export default function Division1() {
         </section>
 
         <section className="division1-section">
-          <h2 className="division1-section-title">Detalles</h2>
-          <div className="three-col">
-            <div className="info-card">
-              <div className="info-card-icon">📅</div>
-              <h3 className="info-card-title">Fecha</h3>
-              <p className="info-card-text">15 de agosto</p>
-            </div>
-            <div className="info-card">
-              <div className="info-card-icon">📍</div>
-              <h3 className="info-card-title">Lugar</h3>
-              <p className="info-card-text">Carrera de Informática</p>
-            </div>
-            <div className="info-card">
-              <div className="info-card-icon">🕐</div>
-              <h3 className="info-card-title">Hora</h3>
-              <p className="info-card-text">08:00 - 14:00</p>
+          <h2 className="division1-section-title">Próxima edición</h2>
+          <div className="next-edition-card">
+            <div className="next-edition-icon">🚀</div>
+            <div>
+              <h3 className="next-edition-title">Nos vemos en 2027</h3>
+              <p className="next-edition-text">
+                La siguiente edición de la Competencia División 1 será en 2027, con fechas aproximadas a fines de julio o en agosto. ¡Vamos con todo
+                para la próxima temporada competitiva!
+              </p>
             </div>
           </div>
         </section>
-
-        <section className="division1-section division1-cta">
-          <button type="button" className="d1-cta-btn" onClick={() => setShowInscripcion(true)}>
-            Inscríbete
-          </button>
-        </section>
       </div>
-
-      <Division1InscripcionModal isOpen={showInscripcion} onClose={() => setShowInscripcion(false)} />
     </div>
   );
 }

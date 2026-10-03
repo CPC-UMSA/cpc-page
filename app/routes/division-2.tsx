@@ -35,6 +35,11 @@ export default function Division2() {
             brindándoles la oportunidad de dar sus primeros pasos en el mundo de la programación competitiva.
           </p>
           <p className="division2-text">
+            La edición 2027 se llevará a cabo aproximadamente a fines de julio o en agosto, con la misma energía y espíritu competitivo de siempre.
+            Será una nueva oportunidad para que los estudiantes más jóvenes se preparen y vivan su primera experiencia en una competencia académica
+            de alto nivel.
+          </p>
+          <p className="division2-text">
             La modalidad de participación es individual, donde cada concursante resolverá un conjunto de problemas algorítmicos durante un tiempo
             determinado. La clasificación se realizará siguiendo las reglas estándar de la programación competitiva, considerando principalmente el
             número de problemas resueltos y, en caso de empate, el tiempo total de resolución.
@@ -64,31 +69,17 @@ export default function Division2() {
         </section>
 
         <section className="division2-section">
-          <h2 className="division2-section-title">Detalles</h2>
-          <div className="three-col">
-            <div className="info-card">
-              <div className="info-card-icon">📅</div>
-              <h3 className="info-card-title">Fecha</h3>
-              <p className="info-card-text">1 de agosto</p>
-            </div>
-            <div className="info-card">
-              <div className="info-card-icon">📍</div>
-              <h3 className="info-card-title">Lugar</h3>
-              <p className="info-card-text">Carrera de Informática</p>
-            </div>
-            <div className="info-card">
-              <div className="info-card-icon">🕐</div>
-              <h3 className="info-card-title">Hora</h3>
-              <p className="info-card-text">09:00 - 14:00</p>
+          <h2 className="division2-section-title">Próxima edición</h2>
+          <div className="next-edition-card">
+            <div className="next-edition-icon">🚀</div>
+            <div>
+              <h3 className="next-edition-title">Nos vemos en 2027</h3>
+              <p className="next-edition-text">
+                La próxima edición de la Competencia División 2 se realizará en 2027, aproximadamente a fines de julio o en agosto. ¡Seguimos
+                preparándonos para una nueva experiencia competitiva!
+              </p>
             </div>
           </div>
-        </section>
-
-        {/* La competencia ya se realizó: el botón queda visible pero inhabilitado. */}
-        <section className="division2-section division2-cta">
-          <button type="button" className="d2-cta-btn" disabled>
-            Inscripciones cerradas
-          </button>
         </section>
       </div>
     </div>

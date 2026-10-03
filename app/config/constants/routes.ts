@@ -58,6 +58,16 @@ export const ROUTES = {
       return '/division-2';
     },
   },
+  EQUIPOS_2026: {
+    PAGE() {
+      return '/equipos-2026';
+    },
+  },
+  NUESTRAS_ACTIVIDADES: {
+    PAGE() {
+      return '/nuestras-actividades';
+    },
+  },
   BOARDS: {
     PAGE(tab?: string) {
       return '/' + ROUTES.PARAMS.BOARDS + (tab ? `?tab=${tab}` : '');

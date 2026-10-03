@@ -172,6 +172,42 @@
   margin: 0;
 }
 
+/* Next edition callout (División 1 / División 2) */
+.next-edition-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #e8f2fa;
+  border-left: 4px solid #2c6f9e;
+  border-radius: 12px;
+  padding: 20px 24px;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+  }
+}
+
+.next-edition-icon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.next-edition-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 6px;
+}
+
+.next-edition-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #4a6070;
+  margin: 0;
+}
+
 /* Advantages */
 .advantages-grid {
   display: grid;
@@ -907,6 +943,618 @@
 
   &:hover {
     background: rgba(255, 255, 255, 0.28);
+  }
+}
+
+/* ── Equipos 2026 page ─────────────────────────────── */
+.equipos-page {
+  overflow: auto;
+  height: 100%;
+}
+
+.equipos-hero {
+  background: linear-gradient(135deg, #1a4a72 0%, #2c6f9e 100%);
+  color: white;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.equipos-hero-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 800;
+  margin: 0 0 8px;
+}
+
+.equipos-hero-sub {
+  font-size: 15px;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.equipos-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  @media (max-width: 600px) {
+    padding: 28px 16px 48px;
+  }
+}
+
+.equipos-note {
+  margin: 0;
+  padding: 14px 18px;
+  border-left: 4px solid #2c6f9e;
+  border-radius: 10px;
+  background: #e8f2fa;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #1e2d3d;
+}
+
+.equipos-section-title {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #1e2d3d;
+  margin: 0 0 20px;
+}
+
+.equipos-section-count {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b8299;
+}
+
+.equipos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: 20px;
+}
+
+.equipos-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1.5px solid #e8edf2;
+  border-radius: 14px;
+  padding: 20px;
+  background: white;
+  transition: box-shadow 0.15s, border-color 0.15s;
+
+  &:hover {
+    border-color: #c5d8e8;
+    box-shadow: 0 6px 18px rgba(44, 111, 158, 0.1);
+  }
+}
+
+.equipos-card-name {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #1e2d3d;
+  margin: 0 0 6px;
+  overflow-wrap: anywhere;
+}
+
+.equipos-card-coach {
+  font-size: 14px;
+  color: #4a6070;
+  margin: 0 0 14px;
+
+  span {
+    font-weight: 700;
+    color: #2c6f9e;
+  }
+}
+
+.equipos-card-members {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #1e2d3d;
+}
+
+.equipos-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: auto;
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    .equipos-result:last-child {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+.equipos-result {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #f4f8fb;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.equipos-result-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b8299;
+}
+
+.equipos-result-value {
+  font-size: 15px;
+  color: #1e2d3d;
+}
+
+.equipos-result-pending {
+  color: #9fb0bf;
+}
+
+.equipos-result-penalty {
+  font-size: 12px;
+  color: #4a6070;
+}
+
+/* ── Nuestras actividades page ─────────────────────── */
+// Paleta del logo del club (cubo ICPC)
+$act-blue: #0085cc;
+$act-red: #ff0040;
+$act-yellow: #ffbb00;
+$act-ink: #1e2d3d;
+
+.act-page {
+  overflow: auto;
+  height: 100%;
+}
+
+.act-bg-blue {
+  background: $act-blue;
+}
+
+.act-bg-red {
+  background: $act-red;
+}
+
+.act-bg-yellow {
+  background: $act-yellow;
+}
+
+.act-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0b2540 0%, #1a4a72 60%, #2c6f9e 100%);
+  color: white;
+  padding: 64px 24px 56px;
+  text-align: center;
+}
+
+.act-hero-title {
+  position: relative;
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.act-hero-sub {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.act-hero-stripe {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 22px;
+
+  span {
+    width: 36px;
+    height: 6px;
+    border-radius: 3px;
+  }
+}
+
+.act-hero-cubes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.act-cube {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  opacity: 0.55;
+  animation: act-float 9s ease-in-out infinite;
+}
+
+@each $i, $left, $top, $size, $delay in (0, 6%, 22%, 30px, 0s), (1, 14%, 70%, 18px, -2s), (2, 24%, 12%, 14px, -4s), (3, 78%, 18%, 28px, -1s),
+  (4, 88%, 62%, 20px, -3s), (5, 70%, 78%, 14px, -5s), (6, 94%, 30%, 12px, -6s), (7, 3%, 82%, 12px, -7s), (8, 36%, 84%, 10px, -8s)
+{
+  .act-cube-#{$i} {
+    left: $left;
+    top: $top;
+    width: $size;
+    height: $size;
+    animation-delay: $delay;
+  }
+}
+
+@keyframes act-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(25deg);
+  }
+}
+
+.act-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media (max-width: 600px) {
+    padding: 28px 16px 48px;
+  }
+}
+
+.act-section-title {
+  margin: 0 0 20px;
+}
+
+.act-section-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.act-semester-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 20px;
+}
+
+.act-card {
+  position: relative;
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 14px;
+  padding: 22px;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(11, 37, 64, 0.1);
+  }
+}
+
+// La franja superior toma el color del acento de la actividad
+.act-semester-grid .act-card {
+  border-top: 5px solid var(--act-accent);
+}
+
+.act-accent-blue {
+  --act-accent: #{$act-blue};
+  --act-accent-text: #006aa3;
+}
+
+.act-accent-red {
+  --act-accent: #{$act-red};
+  --act-accent-text: #d10035;
+}
+
+.act-accent-yellow {
+  --act-accent: #{$act-yellow};
+  --act-accent-text: #9a6b00;
+}
+
+.act-card-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.act-card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.act-card-when {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--act-accent-text);
+}
+
+.act-card-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: $act-ink;
+  margin: 6px 0 8px;
+}
+
+.act-card-text {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #4a6070;
+  margin: 0;
+}
+
+.act-card-note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border-left: 4px solid $act-red;
+  border-radius: 8px;
+  background: #fff0f3;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #7a1029;
+
+  strong {
+    color: #d10035;
+  }
+}
+
+.act-card-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #006aa3;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.act-status {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.act-status-live {
+  background: #fff4d6;
+  color: #9a6b00;
+}
+
+.act-status-next {
+  background: #e3f3fc;
+  color: #006aa3;
+}
+
+.act-status-done {
+  background: #eef1f4;
+  color: #6b8299;
+}
+
+// Calendario de 12 meses con los eventos anuales marcados
+.act-year {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 4px;
+  margin-bottom: 28px;
+  padding: 12px;
+  background: white;
+  border: 1.5px solid #e8edf2;
+  border-radius: 14px;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    row-gap: 10px;
+  }
+}
+
+.act-year-month {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0 10px;
+  border-radius: 8px;
+}
+
+.act-year-today {
+  background: #e3f3fc;
+  box-shadow: inset 0 0 0 2px $act-blue;
+}
+
+.act-year-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #4a6070;
+}
+
+.act-year-dots {
+  display: flex;
+  gap: 3px;
+  min-height: 10px;
+}
+
+.act-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.act-year-now {
+  position: absolute;
+  bottom: -9px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: $act-blue;
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.act-timeline {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 21px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    border-radius: 2px;
+    background: linear-gradient($act-yellow, $act-blue, $act-red, $act-blue);
+  }
+
+  @media (max-width: 480px) {
+    padding-left: 46px;
+
+    &::before {
+      left: 16px;
+    }
+  }
+}
+
+.act-timeline-item {
+  position: relative;
+}
+
+.act-timeline-node {
+  position: absolute;
+  left: -56px;
+  top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 3px solid white;
+  box-shadow: 0 4px 10px rgba(11, 37, 64, 0.18);
+  font-size: 20px;
+  transform: rotate(-6deg);
+
+  @media (max-width: 480px) {
+    left: -46px;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+}
+
+.act-countdown {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding: 22px 26px;
+  border-radius: 16px;
+  color: white;
+  background: linear-gradient(135deg, #0b2540 0%, #1a4a72 100%);
+  box-shadow: inset 0 -5px 0 $act-yellow;
+
+  > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.act-countdown-kicker {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $act-yellow;
+}
+
+.act-countdown-date {
+  font-size: 20px;
+  font-weight: 800;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.act-countdown-venue {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.act-countdown-days {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+
+  strong {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1;
+    color: $act-yellow;
+  }
+
+  span {
+    font-size: 15px;
+    font-weight: 700;
+  }
+}
+
+// Animación de entrada: solo se activa cuando el JS confirma que puede observar el scroll
+.act-reveal-ready .act-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.act-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .act-cube {
+    animation: none;
   }
 }
 
@@ -1650,5 +2298,16 @@ body {
     .jk-menu .jk-menu-items {
       color: inherit !important;
     }
+  }
+}
+
+// Con 7 secciones la barra inferior del celular ya no entra en pantallas angostas: se deja desplazar
+// horizontalmente en lugar de recortar los últimos ítems.
+.jk-bottom-horizontal-menu .jk-menu-items {
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
