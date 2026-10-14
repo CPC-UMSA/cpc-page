@@ -27,7 +27,7 @@ type AnnualActivity = {
   months: number[];
   accent: Accent;
   description: string;
-  link?: { to: string; label: string };
+  links?: { to: string; label: string }[];
 };
 
 const SEMESTER_ACTIVITIES: SemesterActivity[] = [
@@ -36,8 +36,7 @@ const SEMESTER_ACTIVITIES: SemesterActivity[] = [
     title: 'Presentación de grupos de estudio',
     frequency: 'Auditorio de Informática',
     accent: 'blue',
-    description:
-      'Los grupos de estudio presentan su trabajo en el auditorio de la Carrera de Informática. Las fechas las define cada grupo de estudio.',
+    description: 'Los grupos de estudio presentan su trabajo en el auditorio de la Carrera de Informática. Las fechas las define cada grupo de estudio.',
   },
   {
     icon: '💻',
@@ -53,6 +52,8 @@ const SEMESTER_ACTIVITIES: SemesterActivity[] = [
   },
 ];
 
+const ICPC_BOLIVIA_URL = 'https://icpcbolivia.org/';
+
 const ANNUAL_ACTIVITIES: AnnualActivity[] = [
   {
     icon: '🎯',
@@ -62,7 +63,7 @@ const ANNUAL_ACTIVITIES: AnnualActivity[] = [
     accent: 'yellow',
     description:
       'Competencia individual para estudiantes de la UMSA que nunca participaron en una competencia oficial de la ICPC. Los tres mejores forman un equipo oficial que representa al club en la Competencia Boliviana de Programación.',
-    link: { to: '/division-2', label: 'Ver División 2' },
+    links: [{ to: '/division-2', label: 'Ver División 2' }],
   },
   {
     icon: '🏁',
@@ -72,7 +73,7 @@ const ANNUAL_ACTIVITIES: AnnualActivity[] = [
     accent: 'blue',
     description:
       'Competencia por equipos de 3 integrantes, abierta a estudiantes nuevos y antiguos de la UMSA. Clasifican los cuatro mejores equipos y el mejor equipo conformado por chicas a la Competencia Boliviana de Programación.',
-    link: { to: '/division-1', label: 'Ver División 1' },
+    links: [{ to: '/division-1', label: 'Ver División 1' }],
   },
   {
     icon: '🇧🇴',
@@ -82,6 +83,7 @@ const ANNUAL_ACTIVITIES: AnnualActivity[] = [
     accent: 'red',
     description:
       'Las universidades de todo el país compiten el mismo día. Cada departamento tiene su propia sede, así que nuestros equipos compiten en La Paz.',
+    links: [{ to: ICPC_BOLIVIA_URL, label: 'ICPC Bolivia' }],
   },
   {
     icon: '🌎',
@@ -89,9 +91,11 @@ const ANNUAL_ACTIVITIES: AnnualActivity[] = [
     when: 'Primer sábado de noviembre',
     months: [11],
     accent: 'blue',
-    description:
-      'La fase latinoamericana de la ICPC. En Bolivia se realiza en una única sede a nivel nacional, donde se reúnen los mejores equipos del país.',
-    link: { to: '/equipos-2026', label: 'Ver Equipos 2026' },
+    description: 'La fase latinoamericana de la ICPC. En Bolivia se realiza en una única sede a nivel nacional, donde se reúnen los mejores equipos del país.',
+    links: [
+      { to: '/equipos-2026', label: 'Ver Equipos 2026' },
+      { to: ICPC_BOLIVIA_URL, label: 'ICPC Bolivia' },
+    ],
   },
 ];
 
@@ -265,10 +269,20 @@ export default function NuestrasActividades() {
                     </div>
                     <h3 className="act-card-title">{activity.title}</h3>
                     <p className="act-card-text">{activity.description}</p>
-                    {activity.link && (
-                      <Link className="act-card-link" to={activity.link.to}>
-                        {activity.link.label} →
-                      </Link>
+                    {activity.links && (
+                      <div className="act-card-links">
+                        {activity.links.map((link) =>
+                          link.to.startsWith('http') ? (
+                            <a key={link.to} className="act-card-link" href={link.to} target="_blank" rel="noopener noreferrer">
+                              {link.label} ↗
+                            </a>
+                          ) : (
+                            <Link key={link.to} className="act-card-link" to={link.to}>
+                              {link.label} →
+                            </Link>
+                          ),
+                        )}
+                      </div>
                     )}
                   </article>
                 </li>

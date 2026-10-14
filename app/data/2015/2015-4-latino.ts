@@ -2,7 +2,7 @@ import { Competition } from '~/types';
 
 const competition: Competition = {
   competition_id: '2015-4-latino',
-  name: 'Latinoamericano',
+  name: 'Latinoamericana',
   year: 2015,
   location: 'YACUIBA',
   judge: 'BOCA',
