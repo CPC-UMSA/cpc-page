@@ -2,7 +2,7 @@ import { Competition } from '~/types';
 
 const competition: Competition = {
   competition_id: '2017-4-latino',
-  name: 'Latinoamericano',
+  name: 'Latinoamericana',
   year: 2017,
   location: 'Sucre - Universidad Mayor Real y Pontificia San Francisco Xavier',
   judge: 'BOCA',

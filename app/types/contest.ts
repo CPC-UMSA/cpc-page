@@ -13,7 +13,7 @@ interface ScoreboardEntry {
 
 export interface Competition {
   competition_id: string; // e.g. "2025-4-latino"
-  name: string; // e.g. "Latinoamericano"
+  name: string; // e.g. "Latinoamericana"
   year: number;
   location: string;
   judge: JudgeType;

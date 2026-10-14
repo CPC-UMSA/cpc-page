@@ -162,7 +162,7 @@ export default function IcpcResults() {
   const navigate = useNavigate();
 
   return (
-    <div style={{ overflow: 'auto', height: '100%' }}>
+    <div>
       <div className="icpc-toolbar">
         <div className="view-toggle">
           <Link to="?" className={`view-btn${view === 'competitions' ? ' active' : ''}`}>

@@ -2,7 +2,7 @@ import { Competition } from '~/types';
 
 const competition: Competition = {
   competition_id: '2022-4-latino',
-  name: 'Latinoamericano',
+  name: 'Latinoamericana',
   year: 2022,
   location: 'LA PAZ - Universidad Mayor de San Andrés',
   judge: 'BOCA',
