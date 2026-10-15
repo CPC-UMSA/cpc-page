@@ -1,5 +1,7 @@
 import { MetaFunction } from '@remix-run/node';
-import { Link } from '@remix-run/react';
+import { Link, useLoaderData } from '@remix-run/react';
+import { UpcomingActivities } from '~/components/UpcomingActivities';
+import { todayInBolivia } from '~/helpers/activitySchedule';
 
 export const meta: MetaFunction = () => [
   { title: 'Inicio · Club de Programación Competitiva UMSA' },
@@ -15,6 +17,10 @@ export const meta: MetaFunction = () => [
   },
   { property: 'og:image', content: '/home/hero.jpg' },
 ];
+
+export async function loader() {
+  return { today: todayInBolivia() };
+}
 
 const TELEGRAM_URL = 'https://t.me/ClubProgCompUMSA';
 const ICPC_BOLIVIA_URL = 'https://icpcbolivia.org/';
@@ -48,6 +54,8 @@ const EXPLORE = [
 ];
 
 export default function Index() {
+  const { today } = useLoaderData<typeof loader>();
+
   return (
     <div className="home">
       {/* Portada */}
@@ -86,6 +94,11 @@ export default function Index() {
           </figure>
         </div>
       </section>
+
+      {/* Próximas actividades */}
+      <div className="hm-upcoming-wrap">
+        <UpcomingActivities today={today} />
+      </div>
 
       {/* Quiénes somos */}
       <section className="hm-section">
