@@ -103,7 +103,7 @@ export const TEAMS_2026: Team[] = [
     division: 'División 1',
     name: 'Cpbabies',
     coach: 'Miguel Angel Quispe M.',
-    members: ['Chipana Paye Jhoel Alexander', 'Flores Rada Mauricio Álvaro', 'Macías Trujillo Milton Camilo'],
+    members: ['Ballon Tambo Erland Mauricio', 'Flores Rada Mauricio Álvaro', 'Macías Trujillo Milton Camilo'],
     latinoQualified: true,
     results: {
       nacional1: { solved: 4, penalty: 515 },
