@@ -9,7 +9,8 @@ type Role = 'Presidente' | 'Vicepresidente' | 'Vocal';
 
 type Member = { role: Role; name: string; initials: string };
 
-type Board = { year: number; members: Member[] };
+// `period` distingue gestiones dentro de un mismo año (p. ej. cambio de directiva en noviembre).
+type Board = { year: number; period?: string; members: Member[] };
 
 const ROLE_ICONS: Record<Role, string> = {
   Presidente: '★',
@@ -17,17 +18,27 @@ const ROLE_ICONS: Record<Role, string> = {
   Vocal: '●',
 };
 
-// Datos tomados del informe técnico presentado a la Dirección de Carrera (mayo 2026).
 const CURRENT_BOARD: Board = {
   year: 2026,
+  period: 'noviembre 2026 – presente',
   members: [
-    { role: 'Presidente', name: 'Miguel Angel Quispe Mamani', initials: 'MQ' },
-    { role: 'Vicepresidente', name: 'Francisco Gustavo Troche Venegas', initials: 'FT' },
-    { role: 'Vocal', name: 'Dilan Juan Cortez Mansilla', initials: 'DC' },
+    { role: 'Presidente', name: 'Francisco Gustavo Troche Venegas', initials: 'FT' },
+    { role: 'Vicepresidente', name: 'Rossie Jashiel Gutierrez Sardinas', initials: 'RG' },
+    { role: 'Vocal', name: 'Eliseo Eliezer Condori Mamani', initials: 'EC' },
   ],
 };
 
+// Gestiones hasta 2026 tomadas del informe técnico presentado a la Dirección de Carrera (mayo 2026).
 const PAST_BOARDS: Board[] = [
+  {
+    year: 2026,
+    period: 'hasta noviembre',
+    members: [
+      { role: 'Presidente', name: 'Miguel Angel Quispe Mamani', initials: 'MQ' },
+      { role: 'Vicepresidente', name: 'Francisco Gustavo Troche Venegas', initials: 'FT' },
+      { role: 'Vocal', name: 'Dilan Juan Cortez Mansilla', initials: 'DC' },
+    ],
+  },
   {
     year: 2025,
     members: [
@@ -119,7 +130,7 @@ export default function Directiva() {
                   <span aria-hidden="true">{ROLE_ICONS[member.role]}</span> {member.role}
                 </span>
                 <h3 className="dir-card-name">{member.name}</h3>
-                <p className="dir-card-text">Gestión {CURRENT_BOARD.year}</p>
+                <p className="dir-card-text">Gestión {CURRENT_BOARD.period ?? CURRENT_BOARD.year}</p>
               </article>
             ))}
           </div>
@@ -133,8 +144,11 @@ export default function Directiva() {
           </div>
           <ol className="dir-timeline">
             {PAST_BOARDS.map((board) => (
-              <li key={board.year} className="dir-timeline-item">
-                <span className="dir-timeline-year">{board.year}</span>
+              <li key={`${board.year}-${board.period ?? ''}`} className="dir-timeline-item">
+                <span className="dir-timeline-year">
+                  {board.year}
+                  {board.period && <span className="dir-timeline-period">{board.period}</span>}
+                </span>
                 <ul className="dir-timeline-members">
                   {board.members.map((member) => (
                     <li key={member.role} className={roleClass(member.role)}>
