@@ -17,6 +17,7 @@ const NAV_ITEMS: NavItem[] = [
   { to: '/equipos-2026', label: 'Equipos 2026', icon: <span style={{ fontSize: 18 }}>🏆</span> },
   { to: '/nuestras-actividades', label: 'Actividades', icon: <span style={{ fontSize: 18 }}>📅</span> },
   { to: '/directiva', label: 'Directiva', icon: <span style={{ fontSize: 18 }}>👥</span> },
+  { to: '/blog', label: 'Blog', icon: <span style={{ fontSize: 18 }}>📝</span> },
 ];
 
 const isRouteSelected = (pathname: string, to: string) => ('/' + pathname).includes('/' + to);
