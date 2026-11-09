@@ -1,5 +1,7 @@
 import { type MetaFunction } from '@remix-run/node';
+import { Link } from '@remix-run/react';
 import { PhotoGallery } from '~/components';
+import { compareTeams, type ContestResult, DIVISIONS, LATINO_2026_PHOTOS, type Team, TEAMS_2026 } from '~/data/2026/equipos-2026';
 
 export const meta: MetaFunction = () => [{ title: 'Equipos 2026' }];
 
@@ -7,25 +9,7 @@ export async function loader() {
   return null;
 }
 
-type ContestResult = { solved: number; penalty: number };
-
-type Team = {
-  division: Division;
-  name: string;
-  coach: string;
-  members: string[];
-  latinoQualified: boolean;
-  results: {
-    nacional1: ContestResult | null;
-    nacional2: ContestResult | null;
-    latino: ContestResult | null;
-  };
-};
-
-const DIVISIONS = ['División 1', 'División 2'] as const;
-type Division = (typeof DIVISIONS)[number];
-
-const TEAM_PHOTOS = [
+const NACIONAL_PHOTOS = [
   '/photos/Nacional/20260815_143638.jpg',
   '/photos/Nacional/20260815_143718.jpg',
   '/photos/Nacional/20260815_143758.jpg',
@@ -37,79 +21,9 @@ const TEAM_PHOTOS = [
   '/photos/Nacional/IMG_20260815_182914_360.jpg',
 ];
 
-const TEAMS: Team[] = [
-  {
-    division: 'División 2',
-    name: 'La niña que quiso jugar futbol',
-    coach: 'Kevin Arturo Navia P.',
-    members: ['Beizaga Marquez Ricardo Andres', 'Chura Rondo Alan Fabricio', 'Navia Paiva Pablo Arturo'],
-    latinoQualified: true,
-    results: { nacional1: { solved: 3, penalty: 405 }, nacional2: { solved: 1, penalty: 199 }, latino: null },
-  },
-  {
-    division: 'División 2',
-    name: 'DIV5: Las Wawas del LuchXDD',
-    coach: 'Luis David Ajhuacho T.',
-    members: ['Laruta Espinal Hernan', 'Marca Patti Sebastian Jhoel', 'Saravia Chipana Osvaldo Joaquin'],
-    latinoQualified: true,
-    results: { nacional1: { solved: 3, penalty: 288 }, nacional2: { solved: 1, penalty: 47 }, latino: null },
-  },
-  {
-    division: 'División 1',
-    name: 'candi_ositos club de fans',
-    coach: 'Luis David Ajhuacho T.',
-    members: ['Condori Mamani Eliseo Eliezer', 'Coronel Hurtado Andres Jorge', 'Flores Condori Romer'],
-    latinoQualified: true,
-    results: { nacional1: { solved: 7, penalty: 864 }, nacional2: { solved: 3, penalty: 553 }, latino: null },
-  },
-  {
-    division: 'División 1',
-    name: 'Los Maquinolas: The Last Dance',
-    coach: 'Oscar Gauss Carvajal Y.',
-    members: ['Cabrera Gordillo Fabricio Javier', 'Cusicanqui León Marco Andrés', 'Tonconi Mendoza Daner Zein'],
-    latinoQualified: true,
-    results: { nacional1: { solved: 9, penalty: 960 }, nacional2: { solved: 5, penalty: 669 }, latino: null },
-  },
-  {
-    division: 'División 1',
-    name: 'Los Sabrossos 🐻',
-    coach: 'Rodrigo Joaquin Salguero M.',
-    members: ['Caballero Basagoitia Yasir Waldo', 'Cortez Mansilla Dilan Juan', 'Rojas Cerda Luis Alejandro'],
-    latinoQualified: true,
-    results: { nacional1: { solved: 6, penalty: 791 }, nacional2: { solved: 3, penalty: 259 }, latino: null },
-  },
-  {
-    division: 'División 1',
-    name: 'Cpbabies',
-    coach: 'Miguel Angel Quispe M.',
-    members: ['Chipana Paye Jhoel Alexander', 'Flores Rada Mauricio Álvaro', 'Macías Trujillo Milton Camilo'],
-    latinoQualified: true,
-    results: { nacional1: { solved: 4, penalty: 515 }, nacional2: { solved: 1, penalty: 50 }, latino: null },
-  },
-  {
-    division: 'División 1',
-    name: 'Runtime Terror',
-    coach: 'Rossie Jashiel Gutierrez S.',
-    members: ['Cano Quispe Lisbeth Nicole', 'Callisaya Lanes Shelly Anahi', 'Salgado Llusco Nataly Ingrid'],
-    latinoQualified: false,
-    results: { nacional1: { solved: 1, penalty: 15 }, nacional2: { solved: 0, penalty: 0 }, latino: null },
-  },
-];
-
-// Orden ICPC: más problemas resueltos primero y, a igualdad, menor penalización.
-// El Nacional 2 desempata cuando el Nacional 1 queda igual.
-function compareResults(a: ContestResult | null, b: ContestResult | null) {
-  if (!a || !b) return (b ? 1 : 0) - (a ? 1 : 0);
-  return b.solved - a.solved || a.penalty - b.penalty;
-}
-
-function compareTeams(a: Team, b: Team) {
-  return compareResults(a.results.nacional1, b.results.nacional1) || compareResults(a.results.nacional2, b.results.nacional2);
-}
-
 const TEAMS_BY_DIVISION = DIVISIONS.map((division) => ({
   division,
-  teams: TEAMS.filter((team) => team.division === division).sort(compareTeams),
+  teams: TEAMS_2026.filter((team) => team.division === division).sort(compareTeams),
 })).filter(({ teams }) => teams.length > 0);
 
 function ResultTile({ label, result, pendingText = 'Por definir' }: { label: string; result: ContestResult | null; pendingText?: string }) {
@@ -122,6 +36,7 @@ function ResultTile({ label, result, pendingText = 'Por definir' }: { label: str
             {result.solved} {result.solved === 1 ? 'problema' : 'problemas'}
           </strong>
           <span className="equipos-result-penalty">Penalización: {result.penalty}</span>
+          {result.rank !== undefined && <span className="equipos-result-penalty">Puesto general: {result.rank}</span>}
         </>
       ) : (
         <strong className="equipos-result-value equipos-result-pending">{pendingText}</strong>
@@ -132,12 +47,17 @@ function ResultTile({ label, result, pendingText = 'Por definir' }: { label: str
 
 function TeamCard({ team }: { team: Team }) {
   return (
-    <article className="equipos-card">
+    <article className={`equipos-card${team.latinoAward ? ' equipos-card-award' : ''}`}>
       <span className={`equipos-status ${team.latinoQualified ? 'equipos-status-qualified' : 'equipos-status-out'}`}>
         <span className="equipos-status-dot" aria-hidden="true" />
-        {team.latinoQualified ? 'Clasificado a la Latino' : 'No clasificó a la Latino'}
+        {team.latinoQualified ? 'Compitió en la Latino' : 'No clasificó a la Latino'}
       </span>
       <h3 className="equipos-card-name">{team.name}</h3>
+      {team.latinoAward && (
+        <p className="equipos-award">
+          <span aria-hidden="true">🏅</span> {team.latinoAward}
+        </p>
+      )}
       <p className="equipos-card-coach">
         <span>Coach:</span> {team.coach}
       </p>
@@ -160,12 +80,13 @@ export default function Equipos2026() {
     <div className="equipos-page">
       <div className="equipos-hero">
         <h1 className="equipos-hero-title cr-we">Equipos 2026</h1>
-        <p className="equipos-hero-sub">Los {TEAMS.length} equipos que representan al CPC UMSA en la temporada ICPC 2026</p>
+        <p className="equipos-hero-sub">Los {TEAMS_2026.length} equipos que representan al CPC UMSA en la temporada ICPC 2026</p>
       </div>
 
       <div className="equipos-content">
         <p className="equipos-note">
-          📍 Los resultados de la <strong>Latino</strong> se definirán el <strong>7 de noviembre</strong> en Sucre, Chuquisaca. Más información en{' '}
+          🏁 La <strong>Latino</strong> se disputó el <strong>7 de noviembre</strong> en Sucre, Chuquisaca. El puesto general corresponde a la clasificación
+          de todas las sedes. Lee la crónica completa en <Link to="/blog/latino-2026-sucre">nuestro blog</Link> o más información en{' '}
           <a href="https://icpcbolivia.org/" target="_blank" rel="noopener noreferrer">
             ICPC Bolivia
           </a>
@@ -189,8 +110,13 @@ export default function Equipos2026() {
         ))}
 
         <section>
+          <h2 className="equipos-section-title">Fotos de la Latino</h2>
+          <PhotoGallery photos={LATINO_2026_PHOTOS} />
+        </section>
+
+        <section>
           <h2 className="equipos-section-title">Fotos del Nacional</h2>
-          <PhotoGallery photos={TEAM_PHOTOS} />
+          <PhotoGallery photos={NACIONAL_PHOTOS} />
         </section>
       </div>
     </div>
